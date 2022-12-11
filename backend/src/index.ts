@@ -8,6 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 
+
 function mid (req: Request,res: express.Response){
     res.send("app succesfully");
 }
