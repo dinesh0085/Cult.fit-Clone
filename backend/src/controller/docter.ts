@@ -6,9 +6,11 @@ import { doctersModel } from "../modules/docterModel";
 export const getDocters = async (req: Request, res: Response) => {
 
     const search = req.query.search || "";
+    let limit = (req.query.limit) || 10;
+    if (typeof limit != "number") limit = 10;
 
     try {
-        let full = await doctersModel.find();
+        let full = await doctersModel.find().limit(limit);
         if (search && typeof search == "string") {
             let srch = full.filter((e) => e.name?.toLocaleLowerCase()?.includes(search.toLocaleLowerCase()))
             return res.send(srch);
