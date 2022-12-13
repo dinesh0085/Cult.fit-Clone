@@ -6,7 +6,7 @@ import { doctersModel } from "../modules/docterModel";
 export const getDocters = async (req: Request, res: Response) => {
 
     const search = req.query.search || "";
-    let limit = (req.query.limit) || 10;
+    let limit = Number(req.query.limit) || 10;
     if (typeof limit != "number") limit = 10;
 
     try {
