@@ -5,7 +5,7 @@ import Care from './pages/care';
 function App() {
   return (
     <div>
-      
+   
     </div>
   );
 }
