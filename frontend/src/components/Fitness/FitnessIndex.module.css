@@ -1,0 +1,10 @@
+
+.card{
+    border:1px solid rgb(70, 69, 69);
+    padding: 20px 5%;
+    border-radius: 10px;
+    background-color: #171B26;
+    text-align: center;
+    font-size: 1.3rem;
+    
+}
