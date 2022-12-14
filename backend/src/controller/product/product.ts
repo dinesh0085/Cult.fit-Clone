@@ -16,6 +16,7 @@ export const getCare = async (req: Request, res: Response) => {
     }
 }
 
+
 export const getMind = async (req: Request, res: Response) => {
     try {
         let mind = await mindModel.find();
@@ -27,3 +28,5 @@ export const getMind = async (req: Request, res: Response) => {
             res.status(501).send("internal server error")
     }
 }
+
+
