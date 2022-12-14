@@ -9,6 +9,7 @@ import {
   mindRouter,
 } from "./routes/product/productRoute";
 import userRoutes from "./routes/user/userRoutes";
+import { Orouter } from "./controller/user/oAuth/google";
 
 const mongoUrl = process.env.MONGOURL || "";
 const port = process.env.PORT || 8080;
@@ -27,6 +28,7 @@ app.use("/docter", docterRouter);
 
 // Loading Routes
 app.use("/api/user", userRoutes);
+app.use("/api/user", Orouter)
 
 // Connecting to Mongo Database
 connectDb(mongoUrl);
