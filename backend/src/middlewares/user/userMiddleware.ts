@@ -5,6 +5,9 @@ import { Response, Request, NextFunction } from "express";
 // import { CustomRequest } from "./userMiddleware";
 const secretKey: Secret = process.env.JWT_SECRET_KEY || "";
 
+
+export var checkUserAuth = async (req: Request, res: Response) => {
+
 export interface CustomRequest extends Request {
   token: string | JwtPayload;
   userID: string;
@@ -12,6 +15,7 @@ export interface CustomRequest extends Request {
   exp: number;
 }
 var checkUserAuth = async (req: Request, res: Response, next: NextFunction) => {
+
   let token;
   const { authorization } = req.headers;
   // !! Keep in mind to add "Bearer" before token
@@ -21,6 +25,14 @@ var checkUserAuth = async (req: Request, res: Response, next: NextFunction) => {
       token = authorization.split(" ")[1];
 
       // Verifying Token
+
+      const user = jwt.verify(token, secretKey);
+      let userId;
+      if (typeof user !== "string") {
+        req.user = user;
+        userId = user.userId;
+      }
+
       const { userID } = jwt.verify(token, secretKey) as CustomRequest;
 
       // Saving the token for the user so that we can access the user information from the token
@@ -28,6 +40,7 @@ var checkUserAuth = async (req: Request, res: Response, next: NextFunction) => {
 
       // If everything above is good the will pass the next
       next();
+
     } catch (err) {
       // Token is there but user not authorized
       res.send({

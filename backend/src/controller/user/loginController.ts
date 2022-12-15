@@ -4,12 +4,14 @@ import "dotenv/config";
 import jwt, { Secret, JwtPayload } from "jsonwebtoken";
 import express, { Request, Response } from "express";
 
+
 interface CustomRequest extends Request {
   token: string | JwtPayload;
   userID: string;
   iat: number;
   exp: number;
 }
+
 class LoginController {
   static userLogin = async (req: Request, res: Response) => {
     try {
