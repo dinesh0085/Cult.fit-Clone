@@ -30,8 +30,8 @@ function Care() {
         <SimpleGrid marginTop={"3%"} columns={{ sm: 2, md: 3, lg: 5 }} spacing={4}>
          
          {care && care.map((el,i)=>{
-          if(i>7 ){
-            if(i==18){
+          if(i>=0 ){
+            if(i==10){
              return 
             }
             // ----------------single product card-------------------------
