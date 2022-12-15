@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 import "dotenv/config";
 import jwt, { Secret, JwtPayload } from "jsonwebtoken";
 import express, { Request, Response } from "express";
-
 class LoginController {
   static userLogin = async (req: Request, res: Response) => {
     try {

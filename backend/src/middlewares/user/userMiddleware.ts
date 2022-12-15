@@ -4,7 +4,7 @@ import "dotenv/config";
 import { Response, Request } from "express";
 const secretKey: Secret = process.env.JWT_SECRET_KEY || "";
 
-var checkUserAuth = async (req: Request, res: Response) => {
+export var checkUserAuth = async (req: Request, res: Response) => {
   let token;
   const { authorization } = req.headers;
   if (authorization && authorization.startsWith("Bearer")) {
@@ -15,6 +15,7 @@ var checkUserAuth = async (req: Request, res: Response) => {
       const user = jwt.verify(token, secretKey);
       let userId;
       if (typeof user !== "string") {
+        req.user = user;
         userId = user.userId;
       }
     } catch (err) {

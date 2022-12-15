@@ -10,6 +10,8 @@ import {
 } from "./routes/product/productRoute";
 import userRoutes from "./routes/user/userRoutes";
 import { Orouter } from "./controller/user/oAuth/google";
+import { checkUserAuth } from "./middlewares/user/userMiddleware";
+import { cartRouter } from "./routes/cartRouter";
 
 const mongoUrl = process.env.MONGOURL || "";
 const port = process.env.PORT || 8080;
@@ -29,6 +31,10 @@ app.use("/docter", docterRouter);
 // Loading Routes
 app.use("/api/user", userRoutes);
 app.use("/api/user", Orouter)
+
+app.use(checkUserAuth)
+app.use("/cart",cartRouter);
+
 // Connecting to Mongo Database
 connectDb(mongoUrl);
 
