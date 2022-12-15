@@ -1,0 +1,61 @@
+.care_main{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.careCard:hover{
+    width: 98%;
+    transition:0ms;
+}
+
+.testPage{
+ display: flex;
+ width: 100vw;
+ 
+}
+
+.testLeft{
+width: 50%;
+/* border: 1px solid red; */
+display: flex;
+justify-content: center;
+/* align-items: center; */
+
+}
+
+.testRight{
+    width: 50%;
+    /* border: 1px solid blue;    */
+    margin-top: 30px; 
+}
+
+.buynowbox{
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 900px) {
+    
+    .testPage{
+        display: flex;
+        flex-direction: column; 
+       }
+
+       .testLeft{
+        width: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        
+        }
+        
+        .testRight{
+            width: 90%;
+            margin: auto;
+            /* border: 1px solid blue;    */
+            margin-top: 0px; 
+        }
+  }
