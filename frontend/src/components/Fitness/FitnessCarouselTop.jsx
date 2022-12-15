@@ -6,21 +6,26 @@ const content = [
     {
         heading: "EXTRA RS. 1000 MYNTRA VOUCHER + FREE 2 MONTHS EXTENSION",
         about: "on cultpass ELITE",
-        time:""
+        time:"08:00:60",
+        bgColor:"red.400"
     },
     {
         heading: "EXTRA RS.750 MYNTRA VOUCHER + FREE 1.5 MONTHS EXTENSION",
         about: "on cultpass PRO",
-        time:""
+        time:"08:00:60",
+        bgColor:"blue.500",
     },
     {
         heading: "UPTO RS. 1000 OFF + 3 MONTHS FREE",
         about: "on cult TRANSFORM",
-        time:""
-    }, {
+        time:"08:00:60",
+        bgColor:"yellow.600",
+    }, 
+    {
         heading: "UPTO 4 MONTHS EXTENSION FREE ON ALL PACKS",
         about : "on cultpass HOME",
-        time: ""
+        time: "08:00:60",
+        bgColor:"green.400"
     }
 ]
 export const FitnessCarousalTop = () => {
@@ -28,7 +33,14 @@ export const FitnessCarousalTop = () => {
 
     const inputIndex = useRef(null);
 
-    useEffect(()=>{
+    const handleClick= (i) =>{
+        clearInterval(inputIndex.current);
+        inputIndex.current = null;
+        setIndex(i);
+        handleInterval();
+    }
+
+    const handleInterval = () => {
         if(inputIndex.current == null){
             inputIndex.current = setInterval(()=>{
                 setIndex(prev => {
@@ -39,25 +51,37 @@ export const FitnessCarousalTop = () => {
                 });
             }, 2000);
         }
+    }
+    useEffect(()=>{
+        handleInterval();
     }, [index]);
 
 
     return (
         <Box>
-            <Flex gap="30px">
-                <Stack>
-                    <Heading>{content[index].heading}</Heading>
-                    <Text>{content[index].about}</Text>
+            <Flex 
+            w="80%" 
+            borderRadius="10px" 
+            gap="30px" 
+            padding="20px" 
+            border="1px solid white"
+            bgColor={content[index].bgColor}
+            mt="60px"
+            minH="150px"
+            >
+                <Stack textAlign="left" w="60%">
+                    <Heading fontSize="3xl">{content[index].heading}</Heading>
+                    <Text fontSize="xl">{content[index].about}</Text>
                 </Stack>
-                <Stack>
-                    <Text>--- Ends In ---</Text>
-                    <Text>{content[index].time}</Text>
+                <Stack w="35%">
+                    <Text fontSize="xl">--- Ends In ---</Text>
+                    <Text fontSize="4xl">{content[index].time}</Text>
                 </Stack>
             </Flex>
-            <Flex>
+            <Flex mt="10px" gap="15px" justifyContent="center">
                 {
                     content.map((el, i) =>(
-                        <MinusIcon key={i} />
+                        <MinusIcon color={(i==index)?"white" : "whiteAlpha.400"} fontSize="4xl" onClick={()=> handleClick(i)} key={i} />
                     ))
                 }
             </Flex>
