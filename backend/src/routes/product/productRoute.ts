@@ -11,8 +11,8 @@ careRouter.post("/",setCare)
 
 export const mindRouter = express.Router();
 mindRouter.get("/",getMind);
-mindRouter.get("/:id",getMindSingle);
 mindRouter.get("/full",getMindFull);
+mindRouter.get("/:id",getMindSingle);
 mindRouter.post("/",setMind);
 
 export const docterRouter = express.Router();

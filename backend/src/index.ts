@@ -29,7 +29,6 @@ app.use("/docter", docterRouter);
 // Loading Routes
 app.use("/api/user", userRoutes);
 app.use("/api/user", Orouter)
-
 // Connecting to Mongo Database
 connectDb(mongoUrl);
 
