@@ -3,6 +3,15 @@ import bcrypt from "bcrypt";
 import "dotenv/config";
 import jwt, { Secret, JwtPayload } from "jsonwebtoken";
 import express, { Request, Response } from "express";
+
+
+interface CustomRequest extends Request {
+  token: string | JwtPayload;
+  userID: string;
+  iat: number;
+  exp: number;
+}
+
 class LoginController {
   static userLogin = async (req: Request, res: Response) => {
     try {
@@ -58,11 +67,33 @@ class LoginController {
         });
       } else {
         const salt = await bcrypt.genSalt(14);
-        const hashPassword = await bcrypt.hash(password, salt);
+        const newHashPassword = await bcrypt.hash(password, salt);
+
+        // Getting the token which was set in the userMiddleware and then finding the user for which the password needs to be changed
+        const userToken = (req as CustomRequest).token;
+        let user = await UserModel.findById(userToken).select("-password");
+
+        // Changing password here
+        await UserModel.findByIdAndUpdate(user?._id, {
+          $set: { password: newHashPassword },
+        });
+
+        res.status(201).send({
+          Status: "Success",
+          Message: "Password changed successfully",
+        });
       }
     } else {
       res.send({ Status: "Failed", Message: "All fields are required" });
     }
+  };
+
+  static loggedUser = async (req: Request, res: Response) => {
+    // Getting the token which was set in the userMiddleware and then finding the user
+    const userToken = (req as CustomRequest).token;
+    // Getting user here
+    const user = await UserModel.findById(userToken);
+    res.send({ User: user });
   };
 }
 
