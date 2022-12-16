@@ -6,7 +6,7 @@ import { mindModel } from "../../modules/product/mindModel";
 
 export const getCare = async (req: Request, res: Response) => {
     try {
-        let care = await careModel.find();
+        let care = await careModel.find({}, { tests: 0, recomends: 0 });
         return res.send(care);
     } catch (e) {
         if (e instanceof mongoose.Error.ValidationError)
