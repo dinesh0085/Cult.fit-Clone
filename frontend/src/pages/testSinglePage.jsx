@@ -7,7 +7,7 @@ const id="639879faae12ba6f42a8623a"
 
 
 
-function TestSinglePage() {
+const TestSinglePage=()=> {
   const [test,setTest] = useState();
 
   useEffect(()=>{
