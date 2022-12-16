@@ -73,47 +73,55 @@ export const FitnessIndex = () => {
 
 
             {/* ------------ mid section ---------- */}
-
-            <Text>AT-CENTER</Text>
-            <Heading>Trainer-led group classes</Heading>
-
-            {/* ----- carousel------------ */}
-
-
-            <Text>AT-HOME</Text>
-            <Heading>Unlimited home workouts with calorie tracking</Heading>
+            
+            <Box my="50px">
+                <Text color="whiteAlpha.700" fontWeight="bold" fontSize="2xl">AT-CENTER</Text>
+                <Heading fontSize="5xl">Trainer-led group classes</Heading>
+            </Box>
+            
 
             {/* ----- carousel------------ */}
 
 
-            <Heading>Choose your carepass</Heading>
-            <Text>3 flexible plans to suit your fitness needs</Text>
+            <Box my="50px">
+                <Text color="whiteAlpha.700" fontWeight="bold" fontSize="2xl">AT-HOME</Text>
+                <Heading fontSize="5xl">Unlimited home workouts with calorie tracking</Heading>
+            </Box>
+            
+
+            {/* ----- carousel------------ */}
+
+            <Box my="50px">
+                <Heading fontSize="5xl">Choose your carepass</Heading>
+                <Text color="whiteAlpha.700" fontWeight="bold" fontSize="2xl">3 flexible plans to suit your fitness needs</Text>
+            </Box>
+            
 
             <Plans />
 
-            <Heading>FREE TRIALS</Heading> 
+            <Heading fontSize="5xl" my="50px" mt="130px">FREE TRIALS</Heading> 
 
-            <Flex>
-                <Image src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/22ae2a86-60e9-4de3-9180-678f40b69eb0.png" />
+            <Flex h="400px" w="60%" justifyContent="space-between" alignItems="center">
+                <Image h="90%" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/22ae2a86-60e9-4de3-9180-678f40b69eb0.png" />
                
-                <Image src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/2ce1e296-e894-4f65-9dc1-d6ed11c031ae.png" />
+                <Image h="100%" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/2ce1e296-e894-4f65-9dc1-d6ed11c031ae.png" />
               
-                <Image src = "https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/1300abe0-318e-489c-8205-dc770cfe6e54.png" />
+                <Image h="90%" src = "https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/1300abe0-318e-489c-8205-dc770cfe6e54.png" />
               
             </Flex>   
 
 
-            <Flex>
-                <Stack>
-                    <Heading>
-                        carepass ELITE
+            <Flex mt="100px" ml="10%" w="80%" justifyContent="space-between">
+                <Stack spacing="20px" w="45%" textAlign="left">
+                    <Heading fontSize="4xl">
+                        carepass <Text as="span" color="orange.300">ELITE</Text>
                     </Heading>
-                    <Heading>
+                    <Heading fontSize="5xl">
                         Unlimited access to everything in your city
                     </Heading>
-                    <Text>Unlimited access to</Text>
+                    <Heading fontSize="2xl">Unlimited access to</Heading>
 
-                    <List>
+                    <List fontSize="md" color="whiteAlpha.800" fontWeight="bold">
                         <ListItem>
                             <ListIcon />
                             At-center group classes
@@ -130,35 +138,35 @@ export const FitnessIndex = () => {
                         </ListItem>
                     </List>
 
-                    <Box>
-                        <Text>Starting at Rs. 1499/month</Text>
+                    <Stack >
+                        <Text fontWeight="bold" color="whiteAlpha.700" fontSize="md">Starting at Rs. 1499/month</Text>
                         <Flex gap="10px">
                             <Button bgColor="gray">TRY FOR FREE</Button>
                             <Button color="red.500">BUY NOW</Button>
                         </Flex>
 
-                        <Text>
+                        <Flex alignItems="center" gap="5px" fontSize="0.9rem">
                             <Icon />
                             SALE ON NOW
-                        </Text>
-                    </Box>
+                        </Flex>
+                    </Stack>
 
                 </Stack>
-                <Box></Box>
+                <Box w="52%" border="1px"></Box>
             </Flex> 
 
-             <Flex>
-                <Box></Box>
-                <Stack>
-                    <Heading>
-                        carepass PRO
+             <Flex mt="100px" pb="100px" ml="10%" w="80%" justifyContent="space-between">
+                <Box w="52%" border="1px"></Box>
+                <Stack spacing="20px" w="45%" textAlign="left">
+                    <Heading fontSize="4xl">
+                        carepass <Text as="span" color="orange.300">PRO</Text>
                     </Heading>
-                    <Heading>
-                        Unlimited access to PRO gyms in your city
+                    <Heading fontSize="5xl">
+                    Unlimited access to PRO gyms in your city
                     </Heading>
-                    <Text>Unlimited access to</Text>
+                    <Heading fontSize="2xl">Unlimited access to</Heading>
 
-                    <List>
+                    <List fontSize="md" color="whiteAlpha.800" fontWeight="bold">
                         <ListItem>
                             <ListIcon />
                             All PRO gyms
@@ -175,20 +183,22 @@ export const FitnessIndex = () => {
                         </ListItem>
                     </List>
 
-                    <Box>
-                        <Text>Starting at Rs. 1666/month</Text>
+                    <Stack >
+                        <Text fontWeight="bold" color="whiteAlpha.700" fontSize="md">Starting at Rs. 1666/month</Text>
                         <Flex gap="10px">
                             <Button bgColor="gray">TRY FOR FREE</Button>
                             <Button color="red.500">BUY NOW</Button>
                         </Flex>
 
-                        <Text>
+                        <Flex alignItems="center" gap="5px" fontSize="0.9rem">
                             <Icon />
                             SALE ON NOW
-                        </Text>
-                    </Box>
+                        </Flex>
+                    </Stack>
 
                 </Stack>
+
+             
                 
             </Flex>       
         </Box>
