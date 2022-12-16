@@ -1,6 +1,6 @@
 import express from "express";
 import { getDocters } from "../../controller/docter";
-import { getMindFull } from "../../controller/product/mindFull";
+import { getMindFull, setMindFull } from "../../controller/product/mindFull";
 import { getCare, getCareSingle, getMind, getMindSingle,  } from "../../controller/product/product";
 import { setCare, setMind } from "../../controller/product/setProduct";
 
@@ -12,6 +12,7 @@ careRouter.post("/",setCare)
 export const mindRouter = express.Router();
 mindRouter.get("/",getMind);
 mindRouter.get("/full",getMindFull);
+mindRouter.post("/full",setMindFull);
 mindRouter.get("/:id",getMindSingle);
 mindRouter.post("/",setMind);
 

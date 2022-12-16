@@ -5,5 +5,6 @@ export const mindfullModel = mongoose.model("mindfull", new mongoose.Schema({
     title: String,
     desc: String,
     url: String,
-    packs: Number
+    packs: Number,
+    price: Number
 }));

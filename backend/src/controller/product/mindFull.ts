@@ -14,3 +14,16 @@ export const getMindFull = async (req: Request, res: Response) => {
             res.status(501).send("internal server error")
     }
 }
+
+export const setMindFull = async (req: Request, res: Response) => {
+    const { image = "", title = "", desc = "", price = 0, } = req.body;
+    try {
+        let full = await mindfullModel.create({ image, title, desc, price });
+        res.send(full);
+    } catch (e) {
+        if (e instanceof mongoose.Error.ValidationError)
+            res.send(e.message);
+        else
+            res.status(501).send("internal server error")
+    }
+}
