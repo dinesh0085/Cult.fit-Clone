@@ -1,14 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import Mind from './pages/mind';
-import TestSinglePage from './pages/testSinglePage';
-
+ import './App.css';
+ 
+import Navbar from './Components/Navbar';
+import { Allroutes } from './Allroutes/Alloutes';
+ 
+ 
 
 function App() {
   return (
-    <div>
-      <Mind></Mind>
-    </div>
+    <div className="App">
+       
+          <Navbar/>
+          <Allroutes/>
+     </div>
   );
 }
 

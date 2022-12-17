@@ -1,0 +1,351 @@
+.absulutebag{
+    position: relative;
+    padding-top: 50px;
+    background-color:#15171C;
+    left: 0;
+    width: 100%;
+    height: auto;
+    
+}
+
+.h1{
+    color: white;
+    font-size: 80px;
+    padding-bottom: 150px;
+}
+.carepass{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 75%;
+    gap:35px;
+    margin: auto;
+    color: white;
+    padding-bottom: 130px;
+}
+.carepass img{
+    width: 100%;
+    margin-bottom: 25px;
+}
+.carepass div{
+    width: fit-content;
+    
+    text-align: justify;
+    
+    text-align: left;
+}
+.carepass h3{
+     
+    font-size: 22px;
+    
+}
+
+
+.cbutton{
+    display: flex;
+    gap:20px;
+
+}
+.cbutton button{
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+    margin-top: 30px;
+}
+.cbutton button:nth-child(1){
+    cursor: pointer;
+    font-family: Inter-Medium,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    border: 1px solid transparent;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255 255 255 / 10%);
+    color: white;
+    
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 5px;
+    padding: 11.5px 20px;
+    font-weight: 700;
+   
+
+}
+
+
+.cbutton button:nth-child(2){
+    cursor: pointer;
+    font-family: Inter-Medium,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    border: 1px solid transparent;
+   
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 5px;
+    padding: 11.5px 20px;
+    font-weight: 700;
+    color: tomato;
+   
+}
+
+.text{
+    min-height: 175px;
+    margin-left: 5px;
+   
+
+}
+.carepass ul {
+    
+    
+    font-size: 18px;
+    line-height: 2;
+    font-family: Inter-Medium,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    letter-spacing: 0px;
+    margin: 0px 0px 0px 20px;
+    
+}
+
+.simg{
+    position: absolute;
+    top: 51%;
+    margin-left: 25px;
+    
+    
+}
+.simg img{
+    width: 90px;
+    height: 30px;
+    
+}
+
+
+.transform{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:30px;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 50px;
+    font-family: Inter-Bold,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+}
+
+.transform img{
+    width: 100%;
+}
+
+
+ .divTxt{
+     position: absolute;
+    top:2%;
+   margin-left: 10px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 47%;
+    padding: 20px 30px 20px 35px;
+
+ }
+
+ .divTxt1{
+    position: absolute;
+   top:53%;
+   margin-left: 10px;
+
+   align-items: center;
+   display: flex;
+   justify-content: space-between;
+   width: 47%;
+   padding: 20px 30px 20px 35px;
+ 
+
+}
+
+.transform h2{
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+.transform h1{
+    color: white;
+     height: 40px;
+    width: 40px;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 100%;
+    font-weight: bold;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.transform p{
+    font-size: 18px;
+    color: white;
+   
+}
+ 
+
+ .intext{
+    text-align: left;
+ }
+ @media screen and (max-width:1200px) {
+    
+    .carepass{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+         width: 85%;
+        padding-bottom: 100px;
+    }
+
+    .simg{
+        position:relative;
+        top: -12%;
+        margin-left: 22px;
+        
+        
+    }
+    .simg img{
+        width: 70px;
+        height: 20px;
+        
+    }
+
+    .carepass h3{
+     
+        font-size: 18px;
+        
+    }
+    
+    
+    .cbutton{
+        display: grid;
+       
+    
+    }
+
+    .carepass img{
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .cbutton button{
+      
+        margin-top: 5px;
+      
+    }
+
+
+    
+ .divTxt{
+   
+   top:0%;
+  margin-left: 2px;
+ 
+   width: 49%;
+ 
+
+}
+
+.divTxt1{
+   position: absolute;
+  top:52%;
+  margin-left: 2px;
+  width: 49%;
+ 
+}
+
+
+.transform div{
+    margin-bottom:  0;
+}
+
+.transform h2{
+   font-size: 25px;
+  
+}
+.transform h1{
+  
+    height: 30px;
+ 
+}
+.transform p{
+   font-size: 16px;
+   color: white;
+  
+}
+ 
+ }
+
+ @media screen and (max-width: 800px) {
+
+    .carepass{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+       
+        padding-bottom: 100px;
+    }
+
+    .simg{
+        position:relative;
+        top: -15%;
+        margin-left: 25px;
+        
+        
+    }
+    .simg img{
+        width: 90px;
+        height: 30px;
+        
+    }
+
+    .cbutton{
+        display: flex;
+       
+    
+    }
+
+    .transform{
+      
+        grid-template-columns: repeat(1,1fr);
+      
+        width: 85%;
+ 
+    }
+  
+    .transform div{
+        margin-bottom: -40px;
+    }
+        
+ .divTxt{
+   position: relative;
+    top:-85%;
+   
+  
+    width: 100%;
+  
+ 
+ }
+    .divTxt1{
+        position: relative;
+       top:-85%;
+       
+       width: 100%;
+      
+     }
+     
+     .transform h2{
+        font-size: 25px;
+       
+     }
+     .transform h1{
+       
+         height: 30px;
+      
+     }
+     .transform p{
+        font-size: 16px;
+        color: white;
+       
+     }
+  
+ }
