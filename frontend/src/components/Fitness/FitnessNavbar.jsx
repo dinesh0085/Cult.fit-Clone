@@ -4,7 +4,7 @@ import { FitnessIndex } from "./FitnessIndex"
 
 export const FitnessNavbar = () =>{
     return (
-        <Tabs align="center" position="sticky" top="0"  variant="soft-rounded" colorScheme="gray">
+        <Tabs align="center" position="sticky" variant="soft-rounded" colorScheme="gray">
             <TabList padding="10px"  bgColor="#393A3B">
                 <Tab color="whiteAlpha.800">cultpass ELITE</Tab>
                 <Tab color="whiteAlpha.800">cultpass PRO</Tab>
