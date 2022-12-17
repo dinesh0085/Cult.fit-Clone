@@ -7,8 +7,8 @@ import {
   Input,
 } from "@chakra-ui/react";
 import React from "react";
-import RegisterComponent from "../Register/RegisterComponent";
 
+// Login Form Page
 const LoginForm = () => {
   const isError = "";
 
@@ -16,12 +16,12 @@ const LoginForm = () => {
     <>
       <FormControl textAlign={"center"} isInvalid={isError}>
         <FormLabel>Email</FormLabel>
-        <Input type="email" bg={"transparent"} />
+        <Input type="email" />
         <FormLabel>Password</FormLabel>
 
         <Input type="password" />
         <Button
-          bg={"rgba(255, 255, 255, 0.7);"}
+          bg={"rgba(255, 255, 255, 0.7)"}
           mt={4}
           w={"100%"}
           color={"black"}
@@ -30,7 +30,6 @@ const LoginForm = () => {
           Submit
         </Button>
       </FormControl>
-      <RegisterComponent />
     </>
   );
 };

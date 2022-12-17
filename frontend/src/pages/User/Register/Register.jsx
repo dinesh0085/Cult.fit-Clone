@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import RegisterModal from "../../../components/UserComponent/Register/RegisterModal";
 
+// This page has no use but can be used in show alert the user is unauthenticated
 const Register = () => {
   return (
-    <div>Register</div>
-  )
-}
+    <>
+      <RegisterModal />
+    </>
+  );
+};
 
-export default Register
+export default Register;
