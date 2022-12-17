@@ -1,13 +1,13 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
  
-import Care from '../Pages/care';
-import { Fitness } from '../Pages/Fitness';
+import Care from '../pages/care';
+import { Fitness } from '../pages/Fitness';
  
-import {Home} from "../Pages/Home/Home";
-import Mind from '../Pages/mind';
-import { Store } from '../Pages/Store';
-import TestSinglePage from '../Pages/testSinglePage';
+import {Home} from "../pages/Home/Home";
+import Mind from '../pages/mind';
+import { Store } from '../pages/Store';
+import TestSinglePage from '../pages/testSinglePage';
 
 export const Allroutes = () => {
   return (
