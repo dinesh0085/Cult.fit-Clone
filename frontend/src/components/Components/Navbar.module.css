@@ -1,0 +1,138 @@
+.Navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 500;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  color: white;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+    #171a26,
+    rgba(23, 26, 38, 0.0001)
+  );
+}
+
+.middle {
+  display: flex;
+  width: 30%;
+
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.right {
+  display: flex;
+  justify-content: space-between;
+  min-width: 20%;
+  gap: 15px;
+  align-items: center;
+  text-align: center;
+  margin-right: 25px;
+}
+
+.getapp {
+  border: 1px solid;
+  padding: 5px 15px 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+a {
+  text-align: center;
+  font-size: 18px;
+  font-family: Inter-Bold, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  line-height: 22px;
+  font-weight: 600;
+}
+.logo {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.logo1 {
+  display: none;
+}
+.logo h4 {
+  font-size: 20px;
+  font-family: "Brush Script MT", cursive;
+  font-weight: 500;
+}
+.logo img {
+  max-width: 100%;
+  height: 40px;
+  margin: auto;
+  margin-left: 10px;
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .Navbar {
+    display: grid;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+  }
+
+  .middle {
+    display: flex;
+
+    min-width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  a {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .logo {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: -10px;
+  }
+
+  .logo1 {
+    display: block;
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+
+  .logo1 h4 {
+    font-size: 16px;
+    font-family: "Brush Script MT", cursive;
+    font-weight: 400;
+  }
+  .logo1 img {
+    max-width: 100%;
+    height: 30px;
+    margin: auto;
+
+    border-radius: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .middle {
+    display: flex;
+
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  a {
+    font-size: 14px;
+  }
+}
