@@ -19,7 +19,9 @@ const LoginForm = () => {
         <FormLabel>Password</FormLabel>
 
         <Input type="password" />
-        <Button type="submit">Submit</Button>
+        <Button color={"black"} type="submit">
+          Submit
+        </Button>
       </FormControl>
       <Button color={"black"}>Signup</Button>
     </>

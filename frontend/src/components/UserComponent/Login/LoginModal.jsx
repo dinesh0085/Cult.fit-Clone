@@ -20,10 +20,9 @@ const LoginModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box onClick={onOpen}>
+      <Box transition={"0.5s"} onClick={onOpen}>
         <PersonOutlineIcon />
       </Box>
-      {/* <Button >Trigger modal</Button> */}
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
