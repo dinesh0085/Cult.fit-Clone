@@ -15,11 +15,15 @@ import {
 import React from "react";
 import LoginForm from "./LoginForm";
 
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 const LoginModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button onClick={onOpen}>Trigger modal</Button>
+      <Box onClick={onOpen}>
+        <PersonOutlineIcon />
+      </Box>
+      {/* <Button >Trigger modal</Button> */}
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
@@ -30,7 +34,6 @@ const LoginModal = () => {
             <LoginForm />
           </ModalBody>
           <ModalFooter>
-            
             <Button color={"black"} onClick={onClose}>
               Close
             </Button>
