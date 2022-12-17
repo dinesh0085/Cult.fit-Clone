@@ -142,8 +142,8 @@
 }
 .right >svg:nth-child(1){
    position: absolute;
-   right: -18%;
-   top: -25%;
+   right: -19%;
+   top: -24%;
    width: 62%;
  
    align-self: flex-end;
@@ -178,7 +178,7 @@
  
 .Button{
    position: absolute;
-   left: 44%;
+   left: 43%;
    top:88%;
    z-index: 300;
    color: tomato;
@@ -247,7 +247,7 @@
       transition: opacity 600ms ease 0s;
       position: relative;
       object-fit: cover;
-      height: 60vh;
+      height: 70vh;
       will-change: transform;
       opacity: 1;
       
@@ -298,8 +298,9 @@
      
     .imge{
        
-        left: 16%;
-        top:27%;
+        left: 15%;
+        top:26%;
+        
        
      
     }
@@ -388,13 +389,10 @@
 }
 
  
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     
     
-    #v_bag{
-      height: 65vh;
-   
-    }
+  
     
     .contant{
       min-height: 600px;
@@ -441,7 +439,7 @@
      
     .imge{
        
-        left: 10%;
+        left: 12%;
         top:27%;
        
      
@@ -453,7 +451,7 @@
      
     .Button{
        position: absolute;
-       left: 27%;
+       left: 28%;
        top:70%;
        padding: 4px 14px 4px 14px;
        font-size: 16px;
