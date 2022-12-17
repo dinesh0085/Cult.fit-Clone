@@ -12,8 +12,12 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+ 
     "aos": "^2.3.4",
     "axios": "^1.2.1",
+ 
+    "@trendyol-js/react-carousel": "^3.0.0",
+ 
     "bootstrap": "^5.2.3",
     "framer-motion": "^7.6.19",
     "react": "^18.2.0",
@@ -23,7 +27,9 @@
     "react-geolocated": "^4.0.3",
     "react-image-effects": "^1.0.0",
     "react-redux": "^8.0.5",
+ 
     "react-reveal": "^1.2.2",
+ 
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
     "react-scroll-motion": "^0.3.2",

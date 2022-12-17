@@ -1,6 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
-import { Home } from './Pages/Home/Home';
+ import './App.css';
+ 
 import Navbar from './Components/Navbar';
 import { Allroutes } from './Allroutes/Alloutes';
  
@@ -10,11 +9,9 @@ function App() {
   return (
     <div className="App">
        
-         <Navbar/>
+          <Navbar/>
           <Allroutes/>
-      
-       
-    </div>
+     </div>
   );
 }
 

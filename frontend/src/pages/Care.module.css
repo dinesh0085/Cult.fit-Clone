@@ -1,0 +1,10 @@
+.care_main{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.careCard:hover{
+    width: 98%;
+    transition:0ms;
+}

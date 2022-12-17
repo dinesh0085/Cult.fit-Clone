@@ -1,0 +1,98 @@
+.admin h2 {
+  text-align: center;
+  font-size: 30px;
+}
+.admin {
+  width: 100vw;
+  display: flex;
+  max-width: 100vw;
+  margin: 10px;
+  gap: 100px;
+}
+.inp{
+  min-width: 50%;
+  box-shadow: 2px 2px 15px;
+}
+.type input {
+  background-color: red;
+  border: 2px solid;
+  transform: scale(2);
+  margin: 15px;
+}
+.type {
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.form > textarea,
+.form > input {
+  width: 50%;
+  font-size: 25px;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px 10px rgb(2, 2, 20);
+}
+.form > input {
+  height: 40px;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 50%;
+}
+
+.submit:active {
+  background-color: #06b;
+}
+
+.prev {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+.prev p{
+  max-width: 400px;
+}
+.prev > img {
+  max-height: 280px;
+}
+.tcs>div{
+  display: flex;
+  justify-content: space-between;
+}
+.prev>h1{
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 900px) {
+  .type {
+    flex-direction: column;
+  }
+  .prev {
+    flex-direction: column;
+  }
+  .admin{
+    flex-direction: column;
+  }
+}
