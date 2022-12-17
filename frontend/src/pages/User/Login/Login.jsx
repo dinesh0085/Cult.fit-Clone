@@ -1,11 +1,11 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import WithSubnavigation from "../../../components/UserComponent/TempNavbar";
+import LoginModal from "../../../components/UserComponent/Login/LoginModal";
 
 const Login = () => {
   return (
     <Box>
-      <WithSubnavigation />
+      <LoginModal />
     </Box>
   );
 };
