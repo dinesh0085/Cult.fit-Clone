@@ -1,14 +1,26 @@
+
 import "./App.css";
 
-import Navbar from "./components/Navbar";
-import { Allroutes } from "./Allroutes/Alloutes";
+ 
+import { Allroutes } from './Allroutes/Allroutes';
+import './App.css';
+import { Footer } from './components/Footer';
+import Navbar from './components/Navbar';
+import MindSinglePage from "./components/mind/MindSinglePage";
+ 
+ 
+
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Allroutes />
+
+      <MindSinglePage></MindSinglePage>
     </div>
+
+    
+
   );
 }
 

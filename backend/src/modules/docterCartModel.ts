@@ -1,10 +1,16 @@
 import mongoose from "mongoose";
 
-export const doctersModel = mongoose.model("docters", new mongoose.Schema({
-    image: String,
-    name: String,
-    qualify: String,
-    specialize: String,
-    price: Number,
-    langauge: Array
+export const docterCartModel = mongoose.model<{
+    docter: Object,
+    startTime: number,
+    user: mongoose.Schema.Types.ObjectId
+}>("docterCart", new mongoose.Schema({
+    docter: {
+        Object,
+    },
+    startTime: {
+        type: Number,
+        default: 0
+    },
+    user: mongoose.Schema.Types.ObjectId
 }));
