@@ -7,7 +7,7 @@ import axios from "axios";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Nimg } from "./nimg";
 import { Location } from "./Location";
-import Login from "../Pages/User/Login/Login";
+import Login from "../pages/User/Login/Login";
 
 export default function Navbar() {
   return (
