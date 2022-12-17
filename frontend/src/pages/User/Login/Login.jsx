@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import WithSubnavigation from "../../../components/UserComponent/TempNavbar";
+import WithSubnavigation from "../../../Components/UserComponent/TempNavbar";
 
 const Login = () => {
   return (

@@ -1,4 +1,4 @@
-import MindNavbar from "../components/mind/mindNavbar"
+import MindNavbar from "../Components/mind/mindNavbar"
 
 const Mind=()=>{
     return <div>

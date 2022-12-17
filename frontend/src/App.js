@@ -1,14 +1,19 @@
-import logo from './logo.svg';
+ 
+import { Allroutes } from './Allroutes/Allroutes';
 import './App.css';
-import Mind from './pages/mind';
-import TestSinglePage from './pages/testSinglePage';
+import { Footer } from './Components/Footer';
+import Navbar from './Components/Navbar';
+ 
+ 
 
 
 function App() {
   return (
-    <div>
-      <Mind></Mind>
-    </div>
+    <div className="App">
+    <Navbar />
+    <Allroutes />
+    <Footer/>
+  </div>
   );
 }
 

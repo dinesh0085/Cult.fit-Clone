@@ -1,0 +1,523 @@
+
+ 
+.needs {
+  align-items: center;
+  width: 100%;
+  background-color:#15171C;
+    height: auto;
+  
+  
+
+}
+
+ 
+.b {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+
+  height: 100%;
+  
+}
+ 
+.b div>img{
+    width: 70%;
+    margin: auto;
+}
+.c img {
+   width: 33%;
+ }
+.c {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  
+  height: fit-content;
+}
+
+
+.d {
+  width: 33%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+ 
+
+
+ 
+
+.f2{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap: 20px;
+ 
+   width: 65%;
+   margin: auto;
+   margin-top: 20px;
+}
+
+.f2 img{
+   width: 100%;
+ 
+   border-radius: 10px;
+}
+
+
+
+.f1 img{
+   width: 100%;
+   
+  border-radius: 10px;
+  
+}
+.f1{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap: 20px;
+  
+   width: 65%;
+   margin: auto;
+   margin-top: 20px;
+  
+}
+
+.video_frame{
+  position: relative;
+   height: fit-content;
+    width: 100%;
+    overflow:hidden;
+    background-color:#15171C;
+    align-items:baseline;
+    justify-content:center;
+    
+}
+
+#v_bag{
+  
+   display: block;
+   width: 100%;
+   transition: opacity 600ms ease 0s;
+   position: relative;
+   object-fit: cover;
+   height: 100vh;
+   will-change: transform;
+   opacity: 1;
+   
+}
+
+.contant{
+    position: absolute;
+   top:0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  width: 100%;
+  min-height: 800px;
+  
+}
+ 
+.left >svg:nth-child(1){
+   position: absolute;
+   left: -17.5%;
+   top: 10.6%;
+   width: 60%;
+  height: auto;
+   align-self: flex-end;
+   z-index: 100;
+ 
+}
+.left >svg:nth-child(2){
+   position: absolute;
+   left:-19%;
+   top: 54%;
+   width: 63%;
+  height: auto;
+   align-self: flex-end;
+   z-index: 100;
+  
+}
+.right >svg:nth-child(1){
+   position: absolute;
+   right: -19%;
+   top: -24%;
+   width: 62%;
+ 
+   align-self: flex-end;
+   z-index: 100;
+ 
+}
+
+.right >svg:nth-child(2){
+   position: absolute;
+   right: -15%;
+   top: 50%;
+   width: 60%;
+  height: auto;
+   align-self: flex-end;
+   z-index: 100;
+ 
+}
+ 
+.imge{
+    position: absolute;
+    left: 25%;
+    top:19%;
+    z-index: 200;
+     
+ 
+}
+
+.imge img{
+   width: 700px;
+}
+
+ 
+.Button{
+   position: absolute;
+   left: 43%;
+   top:88%;
+   z-index: 300;
+   color: tomato;
+   background-color: white;
+   padding: 7px 17px 7px 17px;
+   border-radius: 5px;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.pass{
+   position: relative;
+   display: grid;
+  
+   grid-template-columns: repeat(3,1fr);
+   width: 75%;
+   margin: auto;
+   gap: 30px;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+}
+.pass div{
+   background: rgb(255 255 255 / 5%);
+   border: 1px solid rgb(255 255 255 / 20%);
+   flex-basis: 30%;
+   backdrop-filter: blur(50px);
+   border-radius: 10px;
+   padding: 25px 15px 20px;
+   transition: all 300ms ease;
+   cursor: pointer;
+   color:white ;
+  
+   
+   
+}
+.pro_box{
+   padding-top:80px;
+   padding-bottom: 250px;
+}
+.pass p{
+   width: 75%;
+   height: 35px;
+   margin: auto;
+   font-family: 'BrandonTextWeb-Regular';
+}
+.pass img{
+   margin: auto;
+   margin-bottom: 30px;
+   width: 40%;
+   height: 40px;
+}
+
+.mdiv{
+   position: relative;
+   
+   width: 100%;
+}
+
+@media screen and (max-width:1200px) {
+   #v_bag{
+  
+      display: block;
+      width: 100%;
+      transition: opacity 600ms ease 0s;
+      position: relative;
+      object-fit: cover;
+      height: 70vh;
+      will-change: transform;
+      opacity: 1;
+      
+   }
+   
+   .contant{
+      min-height: 600px;
+      
+    }
+     
+    .left >svg:nth-child(1){
+       position: absolute;
+       left: -30.5%;
+       top: 16.6%;
+       width: 70%;
+      height: auto;
+       align-self: flex-end;
+       z-index: 100;
+     
+    }
+    .left >svg:nth-child(2){
+       position: absolute;
+       left:-22%;
+       top: 53%;
+       width: 63%;
+      height: auto;
+       align-self: flex-end;
+       z-index: 100;
+      
+    }
+    .right >svg:nth-child(1){
+       position: absolute;
+       right: -22%;
+       top: -27%;
+       width: 62%;
+   
+    }
+    
+    .right >svg:nth-child(2){
+       position: absolute;
+       right: -17%;
+       top: 50%;
+       width: 60%;
+      
+   
+     
+    }
+     
+    .imge{
+       
+        left: 15%;
+        top:26%;
+        
+       
+     
+    }
+    .imge img{
+      width: 550px;
+      height: 400px;
+    }
+     
+    .Button{
+       position: absolute;
+      left:40%;
+       top:85%;
+       padding: 7px 10px 7px 10px;
+       font-size: 16px;
+ 
+    }
+
+    
+.pass{
+ 
+   width: 85%;
+ 
+
+}
+.pass div{
+   height: auto;
+  
+   
+   
+}
+.pro_box{
+  
+   padding-bottom: 200px;
+}
+.pass p{
+   width: 90%;
+   height: 100px;
+   
+}
+ 
+/* ------------------------------- */
+
+.b {
+   display: flex;
+   gap: 50px;
+   width: 90%;
+   justify-content: space-between;
+   align-items: center;
+   margin: auto;
+ 
+   height: 100%;
+   
+ }
+  
+ .b div>img{
+     width: 80%;
+     margin: auto;
+     
+ }
+ 
+ 
+  
+
+.f2{
+   width: 70%;
+   margin-top: 25px;
+}
+
+.f2 img{
+   width: 100%;
+ 
+   border-radius: 10px;
+}
+
+ 
+.f1{
+ 
+   gap: 20px;
+   width: 75%;
+   margin: auto;
+   margin-top: 30px;
+  
+}
+  
+ 
+}
+
+ 
+@media screen and (max-width: 700px) {
+    
+    
+  
+    
+    .contant{
+      min-height: 600px;
+      
+    }
+     
+    .left >svg:nth-child(1){
+       position: absolute;
+       left: -34.5%;
+       top: 23.6%;
+       width: 70%;
+      height: auto;
+       align-self: flex-end;
+       z-index: 100;
+     
+    }
+    .left >svg:nth-child(2){
+       position: absolute;
+       left:-25%;
+       top: 50%;
+       width: 63%;
+      height: auto;
+       align-self: flex-end;
+       z-index: 100;
+      
+    }
+    .right >svg:nth-child(1){
+       position: absolute;
+       right: -23%;
+       top: -19%;
+       width: 62%;
+   
+    }
+    
+    .right >svg:nth-child(2){
+       position: absolute;
+       right: -20%;
+       top: 45%;
+       width: 60%;
+      
+   
+     
+    }
+     
+    .imge{
+       
+        left: 12%;
+        top:27%;
+       
+     
+    }
+    .imge img{
+      width: 300px;
+      height: 300px;
+    }
+     
+    .Button{
+       position: absolute;
+       left: 28%;
+       top:70%;
+       padding: 4px 14px 4px 14px;
+       font-size: 16px;
+ 
+    }
+    
+
+    .pass{
+       position: relative;
+       display: grid;
+      
+       grid-template-columns: repeat(1,1fr);
+       width: 75%;
+       
+    
+    }
+    
+    .pro_box{
+       padding-top:80px;
+       padding-bottom: 230px;
+    }
+    .pass p{
+       width: 85%;
+       height: 70px;
+    }
+     .mdiv{
+      min-width: 100%;
+     
+     }
+    .b {
+      display: flex;
+      gap: 50px;
+      width: 90%;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+    
+      height: 100%;
+      
+    }
+     
+    .b div>img{
+        width: 80%;
+        margin: auto;
+        
+    }
+
+    
+.f2{
+ 
+   width: 93%;
+   gap: 10px;
+   margin-top: 25px;
+}
+ 
+.f1{
+ 
+   width: 80%;
+   gap: 10px;
+   margin: auto;
+   margin-top: 30px;
+  
+}
+
+
+
+
+ }
+
