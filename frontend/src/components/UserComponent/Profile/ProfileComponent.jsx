@@ -17,10 +17,11 @@ import { FaUserEdit } from "react-icons/fa";
 import { TfiHeartBroken } from "react-icons/tfi";
 import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNavProfile";
+import { AiOutlinePoweroff } from "react-icons/ai";
 
 const LinkItems = [
-  { name: "Orders", icon: BsCart3, href: "/profile/orders" },
   { name: "Account", icon: FiSettings, href: "/profile/account" },
+  { name: "Orders", icon: BsCart3, href: "/profile/orders" },
   { name: "Address", icon: FaUserEdit, href: "/profile/address" },
   {
     name: "Medical Records",
@@ -33,7 +34,7 @@ const LinkItems = [
 export default function SimpleSidebar({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box minH="100vh">
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
@@ -45,6 +46,7 @@ export default function SimpleSidebar({ children }) {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
+        border={"1px"}
       >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
@@ -59,13 +61,13 @@ export default function SimpleSidebar({ children }) {
   );
 }
 
-const SidebarContent = ({ onClose, ...rest }) => {
+const SidebarContent = ({ onClose, children, ...rest }) => {
   return (
     <Box
       bg={useColorModeValue("white", "gray.900")}
       borderRightColor={useColorModeValue("gray.200", "gray.700")}
       w={{ base: "full", md: "28%" }}
-      pos="fixed"
+      pos="absolute"
       {...rest}
     >
       {/* <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
@@ -89,42 +91,39 @@ const SidebarContent = ({ onClose, ...rest }) => {
           Users Information Here
         </Text>
       </Box>
-
       {LinkItems.map((link) => (
-        <NavItem
-          key={link.name}
-          name={link.name}
-          href={link.href}
-          icon={link.icon}
+        // <NavItem
+        //   key={link.name}
+        //   name={link.name}
+        //   href={link.href}
+        //   icon={link.icon}
+        // >
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.default
+          }
+          to={link.href}
         >
-          {link.name}
-        </NavItem>
+          <Flex justifyContent={"space-between"} px={6} py={6}>
+            <Text color={"black"}>{link.name}</Text>
+            {/* {children} */}
+            <Icon as={link.icon} />
+          </Flex>
+        </NavLink>
       ))}
-    </Box>
-  );
-};
-
-const NavItem = ({ icon, href, name, children, ...rest }) => {
-  return (
-    <NavLink
-      to={href}
-      className={({ isActive }) => (isActive ? styles.active : styles.default)}
-    >
-      {/* <Flex
-        align="center"
-        justifyContent={"space-between"}
-        p="4"
-        mx="4"
-        cursor="pointer"
+      {/* // Log Out Button */}
+      <NavLink
+        to={"/"}
+        className={({ isActive }) =>
+          isActive ? styles.active : styles.default
+        }
       >
-        {children}
-        {icon && <Icon mr="4" fontSize="16" as={icon} />}
-      </Flex> */}
-      <Flex justifyContent={"space-between"} px={6} py={6}>
-        <Text color={"black"}>{name}</Text>
-
-        <Icon as={icon} />
-      </Flex>
-    </NavLink>
+        <Flex justifyContent={"space-between"} px={6} py={6}>
+          <Text color={"black"}>Log Out</Text>
+          {/* {children} */}
+          <Icon as={AiOutlinePoweroff} />
+        </Flex>
+      </NavLink>
+    </Box>
   );
 };

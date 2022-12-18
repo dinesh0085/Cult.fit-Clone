@@ -8,32 +8,19 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Nimg } from "./nimg";
 import { Location } from "./Location";
 import Login from "../pages/User/Login/Login";
+import { FaUserCircle } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { Icon } from "@chakra-ui/icon";
 
-export default function Navbar({c}) {
-  
-      
-
-  
- 
-
+export default function Navbar({ c }) {
+  const { isAuth } = useSelector((store) => store.login);
   return (
     <>
-      <nav className={style.Navbar}
-       style={{backgroundColor:c}}
-
-
-       
-      >
-
-
-        <NavLink to="/"  >
-    
-          <div className={style.logo}  >
-             <Nimg /> <h4>CARE&FIT</h4>
-          </div> 
-
-          
-    
+      <nav className={style.Navbar} style={{ backgroundColor: c }}>
+        <NavLink to="/">
+          <div className={style.logo}>
+            <Nimg /> <h4>CARE&FIT</h4>
+          </div>
         </NavLink>
 
         <div className={style.middle}>
@@ -65,7 +52,13 @@ export default function Navbar({c}) {
             <button className={style.getapp}>GET APP</button>
           </div>
           <div>
-            <Login />
+            {isAuth ? (
+              <Link to={"/profile/account"}>
+                <Icon w={5} h={5} as={FaUserCircle} />
+              </Link>
+            ) : (
+              <Login />
+            )}
           </div>
           <div>
             <Link to="/cart">
