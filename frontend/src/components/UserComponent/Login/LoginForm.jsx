@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
+// Login Form Page
 const LoginForm = () => {
   const isError = "";
 
@@ -19,9 +20,16 @@ const LoginForm = () => {
         <FormLabel>Password</FormLabel>
 
         <Input type="password" />
-        <Button type="submit">Submit</Button>
+        <Button
+          bg={"rgba(255, 255, 255, 0.7)"}
+          mt={4}
+          w={"100%"}
+          color={"black"}
+          type="submit"
+        >
+          Submit
+        </Button>
       </FormControl>
-      <Button color={"black"}>Signup</Button>
     </>
   );
 };
