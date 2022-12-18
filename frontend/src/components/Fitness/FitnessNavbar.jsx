@@ -17,10 +17,18 @@ export const FitnessNavbar = () =>{
                 <TabPanel padding="0px">
                     <FitnessIndex />
                 </TabPanel>
-                <TabPanel>cultpass Pro!</TabPanel>
-                <TabPanel>cultpass Home!</TabPanel>
-                <TabPanel>cult Transform!</TabPanel>
-                <TabPanel>Buy Now!</TabPanel>
+                <TabPanel padding="0px">
+                    <FitnessIndex />
+                </TabPanel>
+                <TabPanel padding="0px">
+                    <FitnessIndex />                
+                </TabPanel>
+                <TabPanel padding="0px">
+                    <FitnessIndex />                
+                </TabPanel>
+                <TabPanel padding="0px">
+                    <FitnessIndex />                
+                </TabPanel>
             </TabPanels>
         </Tabs>
     )
