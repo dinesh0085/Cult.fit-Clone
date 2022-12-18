@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
@@ -9,15 +9,32 @@ import { Nimg } from "./nimg";
 import { Location } from "./Location";
 import Login from "../pages/User/Login/Login";
 
-export default function Navbar() {
+export default function Navbar({c}) {
+  
+      
+
+  
+ 
+
   return (
     <>
-      <nav className={style.Navbar}>
-        <Link to="/">
-          <div className={style.logo}>
-            <Nimg /> <h4>CARE&FIT</h4>
-          </div>{" "}
-        </Link>
+      <nav className={style.Navbar}
+       style={{backgroundColor:c}}
+
+
+       
+      >
+
+
+        <NavLink to="/"  >
+    
+          <div className={style.logo}  >
+             <Nimg /> <h4>CARE&FIT</h4>
+          </div> 
+
+          
+    
+        </NavLink>
 
         <div className={style.middle}>
           <Link to="/">

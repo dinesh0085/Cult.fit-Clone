@@ -16,31 +16,23 @@ import MedicalRecords from "../components/UserComponent/Profile/ProfileAllPages/
 import Support from "../components/UserComponent/Profile/ProfileAllPages/Support";
 import SimpleSidebar from "../components/UserComponent/Profile/ProfileComponent";
 import Dcotors from "../pages/Dcotors";
+import { useState } from "react";
 
-export const Allroutes = () => {
+export const Allroutes = ({setc}) => {
+ 
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/fitness" element={<Fitness />} />
-        <Route path="/care" element={<Care />} />
-        <Route path="/mind" element={<Mind />} />
-        <Route path="/doctor" element={<Dcotors></Dcotors>} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/details/:id" element={<TestSinglePage />} />
+        <Route path="/" element={<Home setc={setc}/>} />
+        <Route path="/fitness" element={<Fitness setc={setc} /> } />
+        <Route path="/care" element={<Care setc={setc} />} />
+        <Route path="/mind" element={<Mind setc={setc}/>} />
+        <Route path="/doctor" element={<Dcotors setc={setc}/> } />
+        <Route path="/admin" element={<Admin  setc={setc}/>} />
+        <Route path="/details/:id" element={<TestSinglePage setc={setc}/>} />
+  
       </Routes>
-      <SimpleSidebar>
-        <Routes>
-          <Route path={"/profile/orders"} element={<Orders />} />
-          <Route path={"/profile/account"} element={<Account />} />
-          <Route path={"/profile/address"} element={<Address />} />
-          <Route
-            path={"/profile/medical_records"}
-            element={<MedicalRecords />}
-          />
-          <Route path={"/profile/support"} element={<Support />} />
-        </Routes>
-      </SimpleSidebar>
+     
     </div>
   );
 };

@@ -10,6 +10,8 @@
     color: white;
     align-items: center;
     text-align: center;
+    background-color: #15171C;
+
     background-image: linear-gradient(to bottom, #171A26, rgba(23, 26, 38, 0.0001));
     
 }

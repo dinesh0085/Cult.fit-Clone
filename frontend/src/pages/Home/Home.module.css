@@ -1,5 +1,11 @@
 
- 
+ .mainbody{
+   
+   margin-top: -60px;
+   margin-bottom: -10px;
+
+   
+ }
 .needs {
   align-items: center;
   width: 100%;
@@ -103,7 +109,7 @@
    transition: opacity 600ms ease 0s;
    position: relative;
    object-fit: cover;
-   height: 120vh;
+   height: 100vh;
    will-change: transform;
    opacity: 1;
    
@@ -240,6 +246,13 @@
 }
 
 @media screen and (max-width:1200px) {
+   .mainbody{
+   
+      margin-top: -100px;
+      
+      
+    }
+   
    #v_bag{
   
       display: block;
