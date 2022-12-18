@@ -8,6 +8,7 @@ import {Home} from "../pages/Home/Home";
 import Mind from '../pages/mind';
 import { Store } from '../pages/Store';
 import TestSinglePage from '../pages/testSinglePage';
+import Admin from '../pages/Admin';
 
 export const Allroutes = () => {
   return (
@@ -19,6 +20,7 @@ export const Allroutes = () => {
           <Route path="/care" element={<Care/>}/>
           <Route path="/mind" element={<Mind/>}/>
           <Route path="/store" element={<Store/>}/>
+          <Route path="/admin" element={<Admin/>}/>
           <Route path="/details/:id" element={<TestSinglePage/>}/>
       </Routes>
 

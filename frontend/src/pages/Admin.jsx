@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import styles from "./admin.module.css";
 import axios from "axios";
+import AdminLogin from './AdminLogin';
 
 const Admin = () => {
 
@@ -12,7 +13,10 @@ const Admin = () => {
     const submit = (e) => axios.post("http://localhost:8080/" + data.type, data)
         .then(r => console.log(r.data));
 
+    const [login, setLogin] = useState(localStorage.getItem("admin") ? 0 : 1);
 
+    if(login)
+    return <AdminLogin setLogin= {setLogin} ></AdminLogin>
     return (
         <div>
             <div className={styles.admin}>
