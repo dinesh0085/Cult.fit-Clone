@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styles from "./mindFull.module.css";
 import axios from 'axios';
 import DocterPopup from '../components/DocterPopup';
+import { useDisclosure } from '@chakra-ui/react';
 
 let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzliM2ViMzVkY2EyODRkNGVkZmNjZWMiLCJpYXQiOjE2NzEzMzc4NDEsImV4cCI6MTY3MTc2OTg0MX0.gAyGngbn3cF5P1hv5kKD7O0aLjDdEuAmTtV04Q6Fu9g"
-const Dcotors = () => {
+const Dcotors = ({setc}) => {
+    setc("#15171C")
 
     const [data, setData] = useState([]);
     function getData() {
@@ -13,10 +15,13 @@ const Dcotors = () => {
             .then((r) => setData(r.data))
     }
     useEffect(() => getData(), []);
+    const [id, sid] = useState("");
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
 
     return (
         <div>
-            <DocterPopup></DocterPopup>
+            <DocterPopup _id={id} isOpen={isOpen} onOpen={onOpen} onClose={onClose} ></DocterPopup>
             <div className={styles.mindFull}>
                 <h1 style={{ margin: "50px" }}>search by name</h1>
                 <input type="text" name="" id=""
@@ -25,7 +30,7 @@ const Dcotors = () => {
                         border: "1px solid",
                         borderRadius: "10px",
                         height: "40px",
-                        padding: "5px"
+                        padding: "5px",
                     }}
                     onChange={(e) => {
                         if (e.target.value == "") { getData(); return }
@@ -44,6 +49,10 @@ const Dcotors = () => {
                                     <h2>{e.name}</h2>
                                     <h3>${e.price}</h3>
                                     <button
+                                        onClick={() => {
+                                            sid(e._id);
+                                            onOpen();
+                                        }}
                                         style={{
                                             height: "30px",
                                             backgroundColor: "teal"

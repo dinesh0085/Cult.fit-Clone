@@ -1,38 +1,70 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import style from "./popup.module.css";
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    Button,
+} from '@chakra-ui/react'
+import axios from 'axios';
+import { useEffect } from 'react';
+let foo = "enter the consutation time";
+let arr = [];
 
+const DocterPopup = ({ _id, isOpen, onOpen, onClose }) => {
 
-let mnts = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-const DocterPopup = () => {
-
-
-
+    const [time, setTime] = useState(0);
+    const [date, setDate] = useState(0);
+    const [state, setS] = useState("enter the consutation time");
 
 
     return (
-        <div className={style.popup}>
-            <div className={style.flex}>
-                <button>
-                    {new Date().getDate()+1}
-                    {mnts[(new Date().getMonth() + 1) % 12]}
-                <button>{new Date().getHours()} to{new Date().getHours()+3}</button>
+        <div >
+            {/* <Button onClick={onOpen}>Open Modal</Button> */}
 
-                </button>
-                <button>
-                    {new Date().getDate()+2}
-                    {mnts[(new Date().getMonth() + 2) % 12]}
-                <button>{new Date().getHours()} to{new Date().getHours()+3}</button>
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>{state}</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
 
-                </button>
-                <button>
-                    {new Date().getDate()+3}
-                    {mnts[(new Date().getMonth() + 3) % 12]}
-                <button>{new Date().getHours()} to{new Date().getHours()+3}</button>
-                </button>
-            </div>
+                        <input type="date" name="" id="" onChange={(e) => setDate(e.target.value)} />
+                        <input type="time" onChange={(e) => setTime(e.target.value)} />
+
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button colorScheme='blue' mr={3} onClick={onClose}>
+                            Close
+                        </Button>
+                        <Button variant='ghost'
+                            onClick={async () => {
+                                setS(foo);
+                                console.log(time, date);
+                                if (arr.includes(time + date + _id)) {
+                                    setS("not available at this time please consult other docters")
+                                    axios.defaults.headers.common["authorization"] = "Bearer " + localStorage.getItem("token");
+                                    let res = await axios.get(`http://localhost:8080/cart/docter`, {
+                                        startTime: Date.now(), docter: _id
+                                    });
+                                    console.log(res.data);
+                                } else
+                                    setS("your docter consulted succsfully")
+                                arr.push(time + date + _id);
+                            }}
+                        >submit</Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </div>
     );
 }
 
 export default DocterPopup;
+
+
