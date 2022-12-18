@@ -20,7 +20,7 @@ const MindFull = () => {
                             <img src={e.image} alt="" />
                             <div className={styles.mindFullFlex}>
                                 <h2>{e.title}</h2>
-                                <p>{e.desc.substr(0, 150)}</p>
+                                <p style={{color:"black",textAlign:"left",fontSize:"12px"}}>{e.desc.substr(0, 150)}</p>
                                 <h4>{e.packs} Packs</h4>
                             </div>
                         </div>)

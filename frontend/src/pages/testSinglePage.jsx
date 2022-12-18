@@ -2,13 +2,16 @@ import styles from "./testSinglePage.module.css"
 import { Box, Button, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { TimeIcon,CalendarIcon } from '@chakra-ui/icons'
+import { Link, useParams } from "react-router-dom";
 
-const id="639879faae12ba6f42a8623a"
+const id1="639879faae12ba6f42a8623a"
 
 
 
 const TestSinglePage=()=> {
   const [test,setTest] = useState();
+  const {id} = useParams()
+  console.log(id);
 
   useEffect(()=>{
     fetch(`http://localhost:8080/care/${id}`)
@@ -40,7 +43,7 @@ const TestSinglePage=()=> {
 
     <Box className={styles.testRight} >
       {/* -----------Link_--------------- */}
-      <Text color={"grey"} fontSize="12px" >Home {">"} Care {">"} Diagnostic Tests {">"} {test && test.title} </Text>
+      <Text textAlign={"left"} color={"grey"} fontSize="12px" ><Link to="/">Home</Link>  {">"} <Link to="/care">Care</Link>  {">"} <Link to="/care">Diagnostic Tests</Link> {">"} <Link>{test && test.title}</Link> </Text>
     
     
       <Box className={styles.buynowbox} p="3%" marginTop={"20px"} >

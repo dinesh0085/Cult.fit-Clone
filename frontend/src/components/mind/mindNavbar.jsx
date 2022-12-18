@@ -1,5 +1,6 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react"
 import Therapy from "./Therapy"
+import MindFull from "../../pages/MindFull"
 
 
 
@@ -17,7 +18,7 @@ export const MindNavbar = () =>{
                 <TabPanel>
                    <Therapy></Therapy>
                 </TabPanel>
-                <TabPanel>Mindullness</TabPanel>
+                <TabPanel><MindFull></MindFull></TabPanel>
                
             </TabPanels>
         </Tabs>

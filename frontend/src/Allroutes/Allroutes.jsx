@@ -15,6 +15,7 @@ import Address from "../components/UserComponent/Profile/ProfileAllPages/Address
 import MedicalRecords from "../components/UserComponent/Profile/ProfileAllPages/MedicalRecords";
 import Support from "../components/UserComponent/Profile/ProfileAllPages/Support";
 import SimpleSidebar from "../components/UserComponent/Profile/ProfileComponent";
+import Dcotors from "../pages/Dcotors";
 
 export const Allroutes = () => {
   return (
@@ -24,7 +25,7 @@ export const Allroutes = () => {
         <Route path="/fitness" element={<Fitness />} />
         <Route path="/care" element={<Care />} />
         <Route path="/mind" element={<Mind />} />
-        <Route path="/store" element={<Store />} />
+        <Route path="/doctor" element={<Dcotors></Dcotors>} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/details/:id" element={<TestSinglePage />} />
       </Routes>

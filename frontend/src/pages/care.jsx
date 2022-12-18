@@ -1,6 +1,7 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Heading,Image,SimpleGrid,Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from "./Care.module.css"
 
 function Care() {
@@ -36,7 +37,7 @@ function Care() {
             }
             // ----------------single product card-------------------------
             return <Box className={styles.careCard} key={el._id}>
-            <Image borderRadius="5px" src={el.image}></Image>
+           <Link to={`/details/${el._id}`}> <Image borderRadius="5px" src={el.image}></Image></Link> 
 
 
 

@@ -35,8 +35,8 @@ export default function Navbar() {
             {" "}
             <h5>MIND</h5>
           </Link>
-          <Link to="/store">
-            <h5>STORE</h5>
+          <Link to="/doctor">
+            <h5>DOCTOR</h5>
           </Link>
         </div>
 

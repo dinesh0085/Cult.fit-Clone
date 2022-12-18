@@ -103,7 +103,7 @@
    transition: opacity 600ms ease 0s;
    position: relative;
    object-fit: cover;
-   height: 100vh;
+   height: 120vh;
    will-change: transform;
    opacity: 1;
    
