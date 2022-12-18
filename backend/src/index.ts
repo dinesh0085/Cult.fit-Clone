@@ -12,6 +12,7 @@ import userRoutes from "./routes/user/userRoutes";
 import { Orouter } from "./controller/user/oAuth/google";
 import { cartRouter } from "./routes/cartRouter";
 import checkUserAuth from "./middlewares/user/userMiddleware";
+import { AdminRouter } from "./routes/adminRouter";
 
 const mongoUrl = process.env.MONGOURL || "";
 const port = process.env.PORT || 8080;
@@ -24,6 +25,7 @@ app.use(express.json());
 // Just for checking the Home Route
 app.all("/", (req, res) => res.send("working"));
 
+app.use("/admin",AdminRouter);
 app.use("/care", careRouter);
 app.use("/mind", mindRouter);
 app.use("/docter", docterRouter);

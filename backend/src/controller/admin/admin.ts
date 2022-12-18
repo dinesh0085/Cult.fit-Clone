@@ -9,6 +9,7 @@ import "dotenv/config"
 
 export const adminLogin = async (req: Request, res: Response) => {
     const { email, password } = req.body;
+    console.log(email,password);
     try {
         const user = await UserModel.findOne({email});
         const isMatch = await bcrypt.compare(password, user?.password || "");
