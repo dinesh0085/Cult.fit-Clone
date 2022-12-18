@@ -16,6 +16,7 @@ import MedicalRecords from "../components/UserComponent/Profile/ProfileAllPages/
 import Support from "../components/UserComponent/Profile/ProfileAllPages/Support";
 import SimpleSidebar from "../components/UserComponent/Profile/ProfileComponent";
 import Dcotors from "../pages/Dcotors";
+import MindSinglePage from "../components/mind/MindSinglePage"
 
 export const Allroutes = () => {
   return (
@@ -28,6 +29,7 @@ export const Allroutes = () => {
         <Route path="/doctor" element={<Dcotors></Dcotors>} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/details/:id" element={<TestSinglePage />} />
+        <Route path="/minddetails/:id" element={<MindSinglePage></MindSinglePage>} />
       </Routes>
       <SimpleSidebar>
         <Routes>

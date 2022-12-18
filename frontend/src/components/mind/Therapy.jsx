@@ -2,6 +2,7 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import { useEffect, useState } from "react";
 import styles from "./Therapy.module.css"
 import { TimeIcon } from '@chakra-ui/icons'
+import { Link } from "react-router-dom";
 
 const faq=[
   {
@@ -52,7 +53,7 @@ const Therapy=()=>{
           return
         }
         return <Box className={styles.mindCard} position={"relative"} borderRadius="1rem">
-          <Image borderRadius="7px" src={el.image}></Image>
+          <Link to={`/minddetails/${el._id}`}> <Image borderRadius="7px" src={el.image}></Image></Link>
           <Text position={"absolute"}  top="10%" left={"15px"} fontWeight="bold" fontSize={["16px"]} color="black">{el.title}</Text>
           <Box position={"absolute"} top="30%" left={"15px"} display="flex" flexDirection={"column"}  >
           <Text    fontSize={["10px"]} color="blackAlpha.800" width={"60%"} textAlign="left">{el.desc}</Text>
@@ -79,27 +80,27 @@ const Therapy=()=>{
 
         {/* -------FAQ PART--------------- */}
 
-        <Box marginTop={"30px"}  bgColor={'#171a26'} width="100%" >
+        <Box marginTop={"30px"}  bgColor={'#171a26'} width="100%"  paddingTop={"70px"} paddingBottom="50px">
        
        <Box  w={{ base: '100%', md: '95%', lg: '90%' }} m="auto" marginTop={"30px"}>
        
-       <Heading color={"white"} textAlign="left" >FAQS</Heading>
-       <Heading fontSize={{ base: '8px', md: '10px', lg: '12px' }} textAlign="left" color={"grey"} marginTop="5px">7 QUESTIONS</Heading>
+       <Heading color={"white"} textAlign={"left"} fontSize={["26px","32px","40px","48px"]} >FAQS</Heading>
+       <Heading fontSize={{ base: '8px', md: '10px', lg: '12px' }} textAlign="left" color={"grey"} marginTop="5px">5 QUESTIONS</Heading>
        
       <Accordion color={"white"} marginTop="20px"  allowMultiple>
       
-      {faq.map((el)=>{
+      {faq.map((el,i)=>{
         return <AccordionItem>
         <h2>
         <AccordionButton>
-          <Box as="span" flex='1' textAlign='left'>
+          <Box as="span" flex='1' textAlign='left' fontSize={["12px","16px","20px","24px"]}>
             
-           {el.q}
+           Q{i+1}:- {el.q}
           </Box>
           <AccordionIcon />
         </AccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <AccordionPanel pb={4} textAlign="left">
        {el.a}
       </AccordionPanel>
     </AccordionItem>

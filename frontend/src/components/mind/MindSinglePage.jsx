@@ -1,20 +1,19 @@
-import styles from "./testSinglePage.module.css"
+import styles from "./MindSinglePage.module.css"
 import { Box, Button, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { TimeIcon,CalendarIcon } from '@chakra-ui/icons'
 import { Link, useParams } from "react-router-dom";
+import MindNavbar from "./mindNavbar";
 
-const id1="639879faae12ba6f42a8623a"
+// const id="639875051fea79f75a6826cc"
 
 
 
-const TestSinglePage=()=> {
+const MindSinglePage=()=> {
   const [test,setTest] = useState();
   const {id} = useParams()
-  console.log(id);
-
   useEffect(()=>{
-    fetch(`http://localhost:8080/care/${id}`)
+    fetch(`http://localhost:8080/mind/${id}`)
     .then((res)=>res.json())
     .then((data)=>{ setTest(data)})
     .catch((e)=>{console.log(e);})
@@ -25,25 +24,26 @@ const TestSinglePage=()=> {
   return (
     <div className='care_main'> 
     {/* labtest  navbar  */}
-
+{/* 
     <Box h={"40px"} w="100%" bgColor={"#393a3b"}  display="flex" justifyContent={"center"} alignItems="center">
       <Box color={"white"} bgColor={"#1d1d21"} display="flex" justifyContent={"center"} alignItems="center" p={'3px 10px'} borderRadius="4px">
        Lab Tests
       </Box> 
-    </Box> 
+    </Box>  */}
     
     {/* labtest  navbar  */}
+    {/* <MindNavbar></MindNavbar> */}
     
 
     <Box className={styles.testPage}>
 
     <Box  className={styles.testLeft}>
-      <Image marginTop="30px" width="75%" height="60%" borderRadius="1rem" src={test && test.image} ></Image>
+      <Image marginTop="30px" width="75%"  borderRadius="1rem" src={test && test.image} ></Image>
     </Box>
 
     <Box className={styles.testRight} >
       {/* -----------Link_--------------- */}
-      <Text textAlign={"left"} color={"grey"} fontSize="12px" ><Link to="/">Home</Link>  {">"} <Link to="/care">Care</Link>  {">"} <Link to="/care">Diagnostic Tests</Link> {">"} <Link>{test && test.title}</Link> </Text>
+      <Text textAlign={"left"} color={"grey"} fontSize="12px"> <Link to="/">Home</Link> {">"} <Link to="/mind">Mind</Link> {">"} <Link to="/mind">Therapy</Link> {">"} <Link> {test && test.title} </Link> </Text>
     
     
       <Box className={styles.buynowbox} p="3%" marginTop={"20px"} >
@@ -52,8 +52,8 @@ const TestSinglePage=()=> {
         
         <Heading fontSize={"2xl"}>{test && test.title}</Heading>
         <Box display={"flex"} alignItems="center" justifyContent={"center"}>
-        <Text  fontSize="sm" marginRight={"5px"} color="grey" textDecoration="line-through">₹ {test && test.price} </Text>
-        <Text  fontSize="md" fontWeight={"bold"} color="black">₹ {test && test.dprice} </Text>
+        {/* <Text  fontSize="sm" marginRight={"5px"} color="grey" textDecoration="line-through">₹ {test && test.price} </Text> */}
+        <Text  fontSize="md" fontWeight={"bold"} color="black">₹ {test && test.price}/Session </Text>
         </Box>
 
         </Box>
@@ -61,57 +61,15 @@ const TestSinglePage=()=> {
       <Text marginTop={"10px"} color={"grey"} fontSize="12px" textAlign={"justify"}> {test && test.desc} </Text>
 
        <Box className={styles.testAndBuynow} display="flex" justifyContent={"space-between"} alignItems="center" > 
-       {/* 73 Tests
-       Report Ready in 36 Hrs */}
-       <Box className={styles.testAndReports} fontSize="12px" marginTop={"20px"} textAlign={"left"}>
-       <TimeIcon></TimeIcon>  {test && test.tests.length} Tests
-       <br></br>
-       <CalendarIcon></CalendarIcon>  Report Ready in {test && test.tests.length*2} Hrs
-       </Box>
+   
 
-       <Button bg={"#fa3b52"} borderRadius="2rem" color="white" fontSize={"12px"}>Buy Now</Button>
+       <Button bg={"#fa3b52"} borderRadius="2rem" w={'100%'} marginTop="30px" color="white" fontSize={"12px"}>Book 1 session</Button>
 
        </Box>
 
       </Box>
 
-      <Heading fontSize={"16px"} marginTop="40px" textAlign={"left"}>Tests Included</Heading>
-      
-      
-      {/* --------test included---------- */}
-      <SimpleGrid className={styles.testincluded} marginTop={"3%"} columns={[2,3,3,4]} spacing={0} width="90%" >
-       {test && test.tests.map((el)=>{
-         return <Box  display="flex" flexDirection={"column"} justifyContent="center" alignItems={"center"} p={"2px"}>
-          <Box borderRadius="1rem"  boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}  >
-          <Image borderRadius="1rem" height="90px" src={el.image}></Image>
-          </Box>
-         
-          <Text marginTop={"10px"} fontSize={{ sm: "7px", md: "8px", lg: "10px" }} color="black">{el.title}</Text>
-        </Box>
-       })}
-      </SimpleGrid>
-      {/* --------test included---------- */}
 
-
-      {/* --------Recommended Addons---------- */}
-
-      <Box className={styles.RecommendedAddons} bg={"#f5f5f5"} p="20px" marginTop="40px" borderRadius={"10px"}>
-      <Heading fontSize={"16px"} textAlign={"left"}>Recommended Addons</Heading>
-      
-      <SimpleGrid  marginTop={"3%"} columns={[2,3,3,4]} spacing={0} width="90%">
-       {test && test.recomends.map((el)=>{
-         return <Box  display="flex" flexDirection={"column"} justifyContent="center" alignItems={"center"} p={"2px"}>
-          <Box borderRadius="1rem"  boxShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}  >
-          <Image borderRadius="1rem" height="90px" src={el.image}></Image>
-          </Box>
-         
-          <Text marginTop={"10px"} fontSize={{ sm: "7px", md: "8px", lg: "10px" }} color="black">{el.title}</Text>
-          <Text marginTop={"2px"} fontSize={{ sm: "7px", md: "8px", lg: "10px" }} color="black">₹ {el.price.toFixed(0)}</Text>
-        </Box>
-       })}
-      </SimpleGrid>
-      </Box>
-      {/* --------Recommended Addons---------- */}
 
 
     </Box>
@@ -121,7 +79,7 @@ const TestSinglePage=()=> {
 
 
     {/* --------Test Description---------- */}
-    <Box bg={"#171a26"} paddingTop="40px">
+    <Box bg={"#171a26"} paddingTop="40px" marginTop={"100px"}>
       <Text w={"80%"} margin="auto" color={"#a2977f"} marginBottom="10px">What is {test && test.title} Test?</Text>
       <Text w={"80%"} margin="auto" color={"#5d5f68"} fontSize={"12px"} marginBottom="20px">Polycystic Ovarian Disease profile test or PCOD profile test refers to a set of tests that are done to assess the hormone levels and their functions in the body. This test is usually done for women who experience symptoms of Polycystic Ovarian Disease. This is a common disorder that affects women between the age of 15 and 44 who are in their reproductive stage. Women who have this disease find it difficult to conceive and have several health issues too. The main complication of PCOD arises from the cysts that get formed on the ovaries. This prevents the release of eggs and hence face a troubled pregnancy. Other symptoms that indicate PCOD are irregular periods, breakouts & acne, hair fall, weight gain, and facial hair growth. A PCOD test is done to diagnose if a woman suffers from this disorder. It will help the health specialist to understand the cause of your symptoms. It also rules out any other potential health issues since many other health conditions may also show symptoms that are similar to PCOD. Once the doctor has determined whether you have a PCOD or not, he or she can move forward with a suitable treatment. Here are some of the common PCOD tests you can expect in a package: Complete Haemogram Thyroid Stimulating Hormone (TSH) Follicle Stimulating Hormone (FSH) Luteinising Hormone (LH) Insulin - Fasting Prolactin Testosterone Total The PCOD test price varies based on the number of tests that are included in the package. In case you or any of your loved ones have symptoms of PCOD, just connect to your doctor and get PCOD check up done. You can also search for “Gynaecologist Near Me” and consult one. Nowadays, you can also book PCOD test online and get the tests done at home. Just select our PCOD panel test and we will send an expert to collect your samples soon. Keep reading to know more.</Text>
       
@@ -144,4 +102,4 @@ const TestSinglePage=()=> {
   )
 }
 
-export default TestSinglePage
+export default MindSinglePage
