@@ -15,7 +15,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import Logo from "../CareFit.jpg";
 import React from "react";
 // import RegisterComponent from "./RegisterComponent";
-import SignupPage from "./SignupPage";
+import SignupPage from "./SignupForm";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 
 const RegisterModal = () => {

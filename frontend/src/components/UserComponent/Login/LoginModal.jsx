@@ -19,6 +19,7 @@ import React from "react";
 import LoginForm from "./LoginForm";
 
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import { useSelector } from "react-redux";
 const LoginModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -40,7 +41,7 @@ const LoginModal = () => {
           <Image h={60} m={"auto"} src={Logo} alt={"Care&Fit Logo"} />
           <ModalBody minH={"350px"}>
             {/* Login form here */}
-            <LoginForm />
+            <LoginForm onClose={onClose} />
             {/* Registration modal here with google and email */}
             <RegisterComponent />
             <Text w={"80%"} m={"auto"} mt={8} fontSize={"13px"}>

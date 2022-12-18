@@ -1,12 +1,24 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Account from "../../../components/UserComponent/Profile/ProfileAllPages/Account";
+import Address from "../../../components/UserComponent/Profile/ProfileAllPages/Address";
+import MedicalRecords from "../../../components/UserComponent/Profile/ProfileAllPages/MedicalRecords";
+import Orders from "../../../components/UserComponent/Profile/ProfileAllPages/Orders";
+import Support from "../../../components/UserComponent/Profile/ProfileAllPages/Support";
 import SimpleSidebar from "../../../components/UserComponent/Profile/ProfileComponent";
-// import ProfileComponent from "../../../components/UserComponent/Profile/ProfileComponents.jsx";
-// import SimpleSidebar from "../../../components/UserComponent/Profile/ProfileComponents";
 
 const Profile = () => {
   return (
     <>
-      <SimpleSidebar />
+      <SimpleSidebar>
+        <Routes>
+          <Route path={"/account"} element={<Account />} />
+          <Route path={"/orders"} element={<Orders />} />
+          <Route path={"/address"} element={<Address />} />
+          <Route path={"/medical_records"} element={<MedicalRecords />} />
+          <Route path={"/support"} element={<Support />} />
+        </Routes>
+      </SimpleSidebar>
     </>
   );
 };

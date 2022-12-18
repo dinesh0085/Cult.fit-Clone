@@ -1,6 +1,8 @@
 .active div {
   color: rgb(255, 49, 109);
-  border-right: 4px solid rgb(255, 49, 109);
+  border-top: 1px solid rgb(255, 49, 109);
+  border-bottom: 1px solid rgb(255, 49, 109);
+  border-right: 6px solid rgb(255, 49, 109);
 }
 .default {
   color: black;
