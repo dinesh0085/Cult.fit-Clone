@@ -1,0 +1,17 @@
+.popup{
+    margin-top: 100px;
+    height: 100px;
+    width: 500px;
+    background-color: pink;
+    gap: 20px;
+    padding: 30px;
+}
+
+.active{
+    background-color: red;
+}
+.flex{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
