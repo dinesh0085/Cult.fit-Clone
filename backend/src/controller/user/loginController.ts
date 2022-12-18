@@ -25,9 +25,9 @@ class LoginController {
             let token = jwt.sign(
               { userID: user?._id },
               process.env.JWT_SECRET_KEY || "",
-              { expiresIn: "5d" }
+              { expiresIn: "5d" },
             );
-            res.status(201).send({
+            res.status(200).send({
               Status: "Success",
               Message: "Login Successfully",
               Token: token,
@@ -35,7 +35,7 @@ class LoginController {
           }
           // Checking either email or password is incorrect
           else {
-            res.send({
+            res.status(401).send({
               Status: "Failed",
               Message: "Incorrect Details. Please check your email or password",
             });
@@ -43,16 +43,20 @@ class LoginController {
         }
         // Checking if user not registered
         else {
-          res.send({ Status: "Failed", Message: "User not registered" });
+          res
+            .status(405)
+            .send({ Status: "Failed", Message: "User not registered" });
         }
       }
       // Checking all fields are there in input
       else {
-        res.send({ Status: "Failed", Message: "All fields are required" });
+        res
+          .status(406)
+          .send({ Status: "Failed", Message: "All fields are required" });
       }
     } catch (err) {
       console.log(err);
-      res.send("Unable to Login");
+      res.status(408).send({Message:"Unable to Login"});
     }
   };
 
