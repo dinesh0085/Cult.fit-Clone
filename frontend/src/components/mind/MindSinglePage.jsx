@@ -9,7 +9,8 @@ import MindNavbar from "./mindNavbar";
 
 
 
-const MindSinglePage=()=> {
+const MindSinglePage=({setc})=> {
+  setc("#15171C")
   const [test,setTest] = useState();
   const {id} = useParams()
   useEffect(()=>{

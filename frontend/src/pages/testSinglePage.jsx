@@ -5,10 +5,9 @@ import { TimeIcon,CalendarIcon } from '@chakra-ui/icons'
 import { Link, useParams } from "react-router-dom";
 
 const id1="639879faae12ba6f42a8623a"
-
-
-
-const TestSinglePage=()=> {
+ 
+const TestSinglePage=({setc})=> {
+  setc("#15171C")
   const [test,setTest] = useState();
   const {id} = useParams()
   console.log(id);
