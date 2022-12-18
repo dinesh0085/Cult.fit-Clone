@@ -3,7 +3,7 @@ import style from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Nimg } from "./nimg";
 import { Location } from "./Location";
@@ -48,7 +48,7 @@ export default function Navbar() {
             <button className={style.getapp}>GET APP</button>
           </div>
           <div>
-            <PermIdentityIcon/>
+            <Login />
           </div>
           <div>
             <Link to="/cart">
