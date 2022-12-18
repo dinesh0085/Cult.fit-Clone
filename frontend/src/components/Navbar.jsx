@@ -49,7 +49,7 @@ export default function Navbar({ c }) {
             <Location />
           </span>
           <div>
-            <button className={style.getapp}>GET APP</button>
+           <Link to="/admin"><button className={style.getapp}>ADMIN PAGE</button></Link> 
           </div>
           <div>
             {isAuth ? (
