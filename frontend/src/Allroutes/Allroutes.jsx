@@ -16,13 +16,16 @@ import MedicalRecords from "../components/UserComponent/Profile/ProfileAllPages/
 import Support from "../components/UserComponent/Profile/ProfileAllPages/Support";
 import SimpleSidebar from "../components/UserComponent/Profile/ProfileComponent";
 import Dcotors from "../pages/Dcotors";
-import { useState } from "react";
+ 
+import MindSinglePage from "../components/mind/MindSinglePage"
+ 
 
 export const Allroutes = ({setc}) => {
  
   return (
     <div>
       <Routes>
+ 
         <Route path="/" element={<Home setc={setc}/>} />
         <Route path="/fitness" element={<Fitness setc={setc} /> } />
         <Route path="/care" element={<Care setc={setc} />} />
@@ -30,7 +33,8 @@ export const Allroutes = ({setc}) => {
         <Route path="/doctor" element={<Dcotors setc={setc}/> } />
         <Route path="/admin" element={<Admin  setc={setc}/>} />
         <Route path="/details/:id" element={<TestSinglePage setc={setc}/>} />
-  
+        <Route path="/minddetails/:id" element={<MindSinglePage></MindSinglePage>} />
+ 
       </Routes>
      
     </div>
