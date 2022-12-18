@@ -5,6 +5,7 @@
     left: 0;
     width: 100%;
     height: auto;
+   
     
 }
 
@@ -188,6 +189,22 @@
  .intext{
     text-align: left;
  }
+
+
+
+ .crouserBag{
+    display: flex;
+    flex-direction: row;
+     width: 90%;
+     margin: auto;
+
+    border-radius: 30px;
+    padding: 30px 55px;
+    justify-content: space-between;
+ 
+
+    background: linear-gradient(to bottom, #7d7c9e, #b1bece);
+ }
  @media screen and (max-width:1200px) {
     
     .carepass{
@@ -346,6 +363,17 @@
         font-size: 16px;
         color: white;
        
+     }
+
+     .crouserBag{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        width: 90%;
+        background: linear-gradient(to bottom, #7d7c9e, #b1bece);
+     }
+
+     .crouserBag>div{
+        width: 100%;
      }
   
  }
