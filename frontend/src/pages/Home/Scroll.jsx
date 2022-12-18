@@ -7,7 +7,8 @@ import { Toppage } from "./Top_page";
 import { Pass } from "./pass";
 import { CarePass } from "./CarePass";
 import { Elements } from "./elements";
- 
+import {Crouser} from "./Crouser";
+import styles from "./c.module.css"
 
 export const Scroll = () => {
   
@@ -133,7 +134,10 @@ export const Scroll = () => {
          <CarePass/>
 
          <Elements/>  
-
+          
+          <div className={styles.crouser}>
+            <Crouser/>
+          </div>
       </div>
     </>
   );
