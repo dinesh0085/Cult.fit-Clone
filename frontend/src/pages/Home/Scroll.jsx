@@ -14,7 +14,7 @@ export const Scroll = () => {
   
   AOS.init();
   return (
-    <>
+    <div className={style.mainbody}>
      
        <Toppage/>
 
@@ -139,6 +139,6 @@ export const Scroll = () => {
             <Crouser/>
           </div>
       </div>
-    </>
+    </div>
   );
 };
