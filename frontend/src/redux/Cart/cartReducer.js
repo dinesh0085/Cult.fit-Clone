@@ -24,11 +24,12 @@ export const cartReducer = (state = initState, { type, payload }) => {
 
         case RmoveCart:
             {
+               
                 let b = 0;
                 let a = [];
                 // eslint-disable-next-line array-callback-return
                 state.cartItems.map((e, i) => {
-                    if (e.product.id == payload.id) b = e.product.price;
+                    if (e._id == payload.id) b = e.product.price;
                     else a.push(e);
                 })
                 console.log(state.price, b)
