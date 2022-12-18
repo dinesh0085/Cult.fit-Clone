@@ -1,6 +1,8 @@
 import MindNavbar from "../components/mind/mindNavbar"
 
-const Mind=()=>{
+const Mind=({setc})=>{
+
+    setc("#15171C")
     return <div>
        <MindNavbar></MindNavbar>
     </div>

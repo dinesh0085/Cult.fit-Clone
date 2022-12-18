@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCarts,addCart } from '../redux/Cart/cartAction';
 
-const Cart = () => {
-
+const Cart = ({setc}) => {
+    setc("#15171C")
     const dispatch = useDispatch();
 
     const { cartItems, price } = useSelector((store) => store.cart);

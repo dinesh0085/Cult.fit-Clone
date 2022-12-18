@@ -18,6 +18,7 @@ import SimpleSidebar from "../components/UserComponent/Profile/ProfileComponent"
 import Dcotors from "../pages/Dcotors";
  
 import MindSinglePage from "../components/mind/MindSinglePage"
+import Cart from "../pages/Cart";
  
 
 export const Allroutes = ({setc}) => {
@@ -30,10 +31,11 @@ export const Allroutes = ({setc}) => {
         <Route path="/fitness" element={<Fitness setc={setc} /> } />
         <Route path="/care" element={<Care setc={setc} />} />
         <Route path="/mind" element={<Mind setc={setc}/>} />
+        <Route path="/cart" element={<Cart setc={setc}/>}/>
         <Route path="/doctor" element={<Dcotors setc={setc}/> } />
         <Route path="/admin" element={<Admin  setc={setc}/>} />
         <Route path="/details/:id" element={<TestSinglePage setc={setc}/>} />
-        <Route path="/minddetails/:id" element={<MindSinglePage></MindSinglePage>} />
+        <Route path="/minddetails/:id" element={<MindSinglePage setc={setc}/> } />
  
       </Routes>
      
