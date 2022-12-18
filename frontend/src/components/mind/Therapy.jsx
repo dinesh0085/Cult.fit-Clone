@@ -34,7 +34,7 @@ const Therapy=()=>{
     const [mind,setMind] = useState([]);
 
   useEffect(()=>{
-    fetch("http://18.182.4.15:8080/mind")
+    fetch("http://localhost:8080/mind")
     .then((res)=>res.json())
     .then((data)=>{ setMind(data)})
     .catch((e)=>{console.log(e);})

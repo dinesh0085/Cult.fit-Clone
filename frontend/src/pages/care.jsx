@@ -4,13 +4,14 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./Care.module.css"
 
+
 function Care({setc}) {
 
   setc("#15171C")
   const [care,setCare] = useState([]);
 
   useEffect(()=>{
-    fetch("http://18.182.4.15:8080/care")
+    fetch("http://localhost:8080/care")
     .then((res)=>res.json())
     .then((data)=>{ setCare(data)})
     .catch((e)=>{console.log(e);})

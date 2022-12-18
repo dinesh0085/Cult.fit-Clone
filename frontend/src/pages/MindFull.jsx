@@ -4,7 +4,7 @@ import styles from "./mindFull.module.css";
 const MindFull = () => {
     const [data, setData] = useState([]);
     function getData() {
-        fetch("http://18.182.4.15:8080/mind/full").then((r) => r.json())
+        fetch("http://localhost:8080/mind/full").then((r) => r.json())
             .then((r) => r ? setData(r) : setData([]));
     }
     useEffect(() => getData(), []);

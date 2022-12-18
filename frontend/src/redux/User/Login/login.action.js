@@ -8,7 +8,7 @@ import {
   LOGIN_SUCCESS,
 } from "../user.types";
 
-const loginUrl = "http://18.182.4.15:8080/api/user/login";
+const loginUrl = "http://localhost:8080/api/user/login";
 const login = (info) => async (dispatch) => {
   dispatch({ type: LOGIN_LOADING });
   // On Success
