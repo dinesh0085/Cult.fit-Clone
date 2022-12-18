@@ -1,8 +1,11 @@
+import { CheckIcon } from "@chakra-ui/icons";
 import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, List, ListIcon, ListItem, Stack, Text } from "@chakra-ui/react"
 import { FitnessCarousel2 } from "./FitnessCarousel2";
 import { FitnessCarousalTop } from "./FitnessCarouselTop";
 import styles from "./FitnessIndex.module.css";
 import { Plans } from "./Plans";
+import { TbDiscount } from "react-icons/tb";
+import { FAQs } from "./FAQs";
 
 export const FitnessIndex = () => {
     return (
@@ -123,17 +126,17 @@ export const FitnessIndex = () => {
 
                     <List fontSize="md" color="whiteAlpha.800" fontWeight="bold">
                         <ListItem>
-                            <ListIcon />
+                            <ListIcon color="red.400" p="2px" border="1px" borderRadius="50%" as={CheckIcon} />
                             At-center group classes
                         </ListItem>
 
                         <ListItem>
-                            <ListIcon />
+                            <ListIcon color="red.400" p="2px" border="1px" borderRadius="50%" as={CheckIcon} />
                             All ELITE & PRO gyms
                         </ListItem>
 
                         <ListItem>
-                            <ListIcon />
+                            <ListIcon color="red.400" p="2px" border="1px" borderRadius="50%" as={CheckIcon} />
                             At-home live workouts
                         </ListItem>
                     </List>
@@ -146,7 +149,7 @@ export const FitnessIndex = () => {
                         </Flex>
 
                         <Flex alignItems="center" gap="5px" fontSize="0.9rem">
-                            <Icon />
+                            <Icon as={TbDiscount} color="orange.400" />
                             SALE ON NOW
                         </Flex>
                     </Stack>
@@ -155,7 +158,7 @@ export const FitnessIndex = () => {
                 <Box w="52%" border="1px"></Box>
             </Flex> 
 
-             <Flex mt="100px" pb="100px" ml="10%" w="80%" justifyContent="space-between">
+            <Flex mt="100px" pb="100px" ml="10%" w="80%" justifyContent="space-between">
                 <Box w="52%" border="1px"></Box>
                 <Stack spacing="20px" w="45%" textAlign="left">
                     <Heading fontSize="4xl">
@@ -168,18 +171,25 @@ export const FitnessIndex = () => {
 
                     <List fontSize="md" color="whiteAlpha.800" fontWeight="bold">
                         <ListItem>
-                            <ListIcon />
-                            All PRO gyms
+                            <Flex gap="2" alignItems="center">
+                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
+                                <Text>All PRO gyms</Text>
+                            </Flex>                            
                         </ListItem>
 
                         <ListItem>
-                            <ListIcon />
-                            At-home live workouts
+                            <Flex gap="2" alignItems="center">
+                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
+                                <Text> At-home live workouts</Text>
+                            </Flex>                           
                         </ListItem>
 
                         <ListItem>
-                            <ListIcon />
-                            2 sessions/month at ELITE gyms & group classes
+                            <Flex gap="2" alignItems="center">
+                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
+                                <Text>2 sessions/month at ELITE gyms & group classes</Text>
+                            </Flex>
+                            
                         </ListItem>
                     </List>
 
@@ -191,16 +201,110 @@ export const FitnessIndex = () => {
                         </Flex>
 
                         <Flex alignItems="center" gap="5px" fontSize="0.9rem">
-                            <Icon />
+                            <Icon as={TbDiscount} color="orange.400" />
                             SALE ON NOW
                         </Flex>
                     </Stack>
 
                 </Stack>
 
-             
                 
-            </Flex>       
+            </Flex>
+
+            <Stack 
+            w="70%" 
+            border="1px" 
+            textAlign="left"
+            p="30px"
+            spacing="5"
+            borderRadius="20px"
+            >
+                <Text fontSize="5xl">carepass <Text color="hotpink" as="span">HOME</Text></Text>
+                <Heading fontSize="5xl">Bring the gym home</Heading>
+
+                <Stack>
+                    <Heading fontSize="2xl">Unlimited access to</Heading>
+
+                    <List spacing={2} fontSize="lg" fontWeight="bold" color="whiteAlpha.700">
+                        <ListItem>
+                            <Flex gap="2" alignItems="center">
+                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
+                                <Text>At-home workouts</Text>
+                            </Flex>
+                        </ListItem>
+                        <ListItem>
+                            <Flex gap="2" alignItems="center">
+                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
+                                <Text>Celebrity workouts</Text>
+                            </Flex>
+                        </ListItem>
+                        <ListItem>
+                            <Flex gap="2" alignItems="center">
+                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
+                                <Text>Goal-based workouts & meditation sessions</Text>
+                            </Flex>
+                            
+                        </ListItem>
+                    </List>
+                </Stack>
+                
+
+                <Stack>
+                    <Text color="whiteAlpha.700" fontSize="xl">Starting at Rs.117/month</Text>
+                    <Flex gap="5">
+                        <Button fontWeight="bold" bgColor="gray">TRY FOR FREE</Button>
+                        <Button fontWeight="bold" color="red.400">BUY NOW</Button>
+                    </Flex>
+                </Stack>
+                
+                <Flex gap="5px" alignItems="center">
+                    <Icon color="orange.500" as={TbDiscount} /> 
+                    <Text fontSize="sm">SALE ON NOW</Text>
+                </Flex>
+            </Stack> 
+
+            <Box
+            mt="70px" 
+            w="80%" 
+            border="1px"
+            >
+                <Stack spacing={10} my="10" w="80%" textAlign="left">
+                    <Box>
+                        <Text fontSize="4xl">care transform</Text>
+                        <Heading fontSize="4xl">Lose weight for good</Heading>
+                    </Box>
+                    
+
+                    <List fontSize="xl" spacing={3}>
+                        <ListItem>
+                            <ListIcon />
+                            Online Habit Coach
+                        </ListItem>
+
+                        <ListItem>
+                            <ListIcon />
+                            Detailed Nutritional Guidelines
+                        </ListItem>
+
+                        <ListItem>
+                            <ListIcon />
+                            Customized Workout Plan
+                        </ListItem>
+
+                        <ListItem>
+                            <ListIcon />
+                            Daily Check-ins & More!
+                        </ListItem>
+
+                    </List>
+
+                    <Text color="blue.200">EXPLORE OFFERS</Text>
+                </Stack>
+            </Box>
+
+
+            {/* ----------- FAQs section ------------ */}
+            <FAQs />      
         </Box>
     )
 }
