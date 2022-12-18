@@ -10,7 +10,7 @@ function Care({setc}) {
   const [care,setCare] = useState([]);
 
   useEffect(()=>{
-    fetch("http://localhost:8080/care")
+    fetch("http://18.182.4.15:8080/care")
     .then((res)=>res.json())
     .then((data)=>{ setCare(data)})
     .catch((e)=>{console.log(e);})

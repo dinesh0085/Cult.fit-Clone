@@ -11,7 +11,7 @@ const Dcotors = ({setc}) => {
     const [data, setData] = useState([]);
     function getData() {
         axios.defaults.headers.common["authorization"] = "Bearer " + token;
-        axios.get("http://localhost:8080/docter?limit=50")
+        axios.get("http://18.182.4.15:8080/docter?limit=50")
             .then((r) => setData(r.data))
     }
     useEffect(() => getData(), []);

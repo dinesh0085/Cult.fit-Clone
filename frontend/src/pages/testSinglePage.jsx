@@ -19,7 +19,7 @@ const TestSinglePage=({setc})=> {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    fetch(`http://localhost:8080/care/${id}`)
+    fetch(`http://18.182.4.15:8080/care/${id}`)
     .then((res)=>res.json())
     .then((data)=>{ setTest(data)})
     .catch((e)=>{console.log(e);})
