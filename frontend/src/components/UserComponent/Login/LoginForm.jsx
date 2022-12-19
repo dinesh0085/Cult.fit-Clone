@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Alert,
+  AlertIcon,
   Button,
   FormControl,
   FormErrorMessage,
@@ -8,15 +10,15 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import login from "../../../redux/User/Login/login.action";
+import login, { getUser } from "../../../redux/User/Login/login.action";
 import { Navigate, useNavigate } from "react-router-dom";
 
 // Login Form Page
 const LoginForm = ({ onClose }) => {
   const dispatch = useDispatch();
-  const { isLoading, errorMessage, isError, isAuth } = useSelector(
-    (store) => store.login,
-  );
+  const { isLoading, errorMessage, successMessage, isError, isAuth } =
+    useSelector((store) => store.login);
+  const info = localStorage.getItem("token");
   const [user, setUser] = React.useState({ email: "", password: "" });
 
   const handleChange = (e) => {
@@ -26,6 +28,7 @@ const LoginForm = ({ onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(user));
+    dispatch(getUser(info));
     setUser({
       email: "",
       password: "",
@@ -33,11 +36,23 @@ const LoginForm = ({ onClose }) => {
   };
 
   // console.log(isLoading);
-  console.log(isAuth);
+  // console.log(isAuth);
   return (
     <>
       <form onSubmit={handleSubmit}>
         <FormControl textAlign={"center"}>
+          {errorMessage ? (
+            <Alert fontWeight={"bold"} status="error" bg={"transparent"}>
+              <AlertIcon />
+              {errorMessage}
+            </Alert>
+          ) : null}
+          {successMessage ? (
+            <Alert fontWeight={"bold"} status="success" bg={"transparent"}>
+              <AlertIcon />
+              {successMessage}
+            </Alert>
+          ) : null}
           <FormLabel>Email</FormLabel>
           <Input
             onChange={handleChange}

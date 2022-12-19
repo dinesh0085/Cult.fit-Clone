@@ -35,7 +35,7 @@ const RegisterModal = () => {
         type="submit"
         onClick={onOpen}
       >
-        <Text>Sign in with email</Text>
+        <Text>Sign up with email</Text>
         <AiOutlineMail />
       </Button>
       <Modal

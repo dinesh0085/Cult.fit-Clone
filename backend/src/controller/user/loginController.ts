@@ -56,7 +56,7 @@ class LoginController {
       }
     } catch (err) {
       console.log(err);
-      res.status(408).send({Message:"Unable to Login"});
+      res.status(408).send({ Message: "Unable to Login" });
     }
   };
 

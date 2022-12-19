@@ -31,8 +31,9 @@ const LinkItems = [
   { name: "Support", icon: BiSupport, href: "/profile/support" },
 ];
 
-export default function SimpleSidebar({ children }) {
+export default function SimpleSidebar({ children, token }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
   return (
     <Box minH="100vh">
       <SidebarContent

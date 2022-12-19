@@ -1,32 +1,38 @@
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
   Flex,
   FormControl,
   FormLabel,
-  Heading,
   HStack,
+  Icon,
   Input,
   InputGroup,
   InputRightElement,
   Link,
   Stack,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import register from "../../../redux/User/Register/register.action";
 
 const SignupPage = () => {
   const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword2, setShowPassword2] = React.useState(false);
   const dispatch = useDispatch();
+  const { isLoading, isError, errorMessage, successMessage } = useSelector(
+    (store) => store.register,
+  );
   const [user, setUser] = React.useState({
     name: "",
-    lName: "",
+    lname: "",
     email: "",
     password: "",
+    password_confirmation: "",
     tc: true,
   });
 
@@ -39,7 +45,8 @@ const SignupPage = () => {
     dispatch(register(user));
   };
 
-  console.log(user);
+  // console.log(user);
+  console.log(errorMessage);
   return (
     <>
       <Flex
@@ -52,9 +59,25 @@ const SignupPage = () => {
           <form onSubmit={handleSubmit}>
             <Box>
               <Stack spacing={4}>
+                {errorMessage ? (
+                  <Alert fontWeight={"bold"} status="error" bg={"transparent"}>
+                    <AlertIcon />
+                    {errorMessage}
+                  </Alert>
+                ) : null}
+                {successMessage ? (
+                  <Alert
+                    fontWeight={"bold"}
+                    status="success"
+                    bg={"transparent"}
+                  >
+                    <AlertIcon />
+                    {successMessage}
+                  </Alert>
+                ) : null}
                 <HStack>
-                  <Box w={"100%"}>
-                    <FormControl id="name" isRequired>
+                  <Box>
+                    <FormControl id="name">
                       <FormLabel>First Name</FormLabel>
                       <Input
                         placeholder={"Enter First Name"}
@@ -66,19 +89,19 @@ const SignupPage = () => {
                     </FormControl>
                   </Box>
                   <Box>
-                    {/* <FormControl id="lname">
+                    <FormControl id="lname">
                       <FormLabel>Last Name</FormLabel>
                       <Input
                         placeholder={"Enter Last Name"}
                         onChange={handleChange}
-                        name="lname"
                         type="text"
+                        name="lname"
                         value={user.lName}
                       />
-                    </FormControl> */}
+                    </FormControl>
                   </Box>
                 </HStack>
-                <FormControl id="email" isRequired>
+                <FormControl id="email">
                   <FormLabel>Email address</FormLabel>
                   <Input
                     placeholder={"Enter Email"}
@@ -88,22 +111,18 @@ const SignupPage = () => {
                     type="email"
                   />
                 </FormControl>
-                <FormControl id="password" isRequired>
+                <FormControl id="password">
                   <FormLabel>Password</FormLabel>
                   <InputGroup>
                     <Input
-                      placeholder={"Enter Email"}
+                      placeholder={"Enter Password"}
                       onChange={handleChange}
                       name="password"
-                      value={user.email}
+                      value={user.password}
                       type={showPassword ? "text" : "password"}
                     />
                     <InputRightElement h={"full"}>
                       <Button
-                        placeholder={"Enter Password"}
-                        name={"password"}
-                        value={user.password}
-                        onChange={handleChange}
                         type={showPassword ? "text" : "password"}
                         variant={"ghost"}
                         onClick={() =>
@@ -115,12 +134,36 @@ const SignupPage = () => {
                     </InputRightElement>
                   </InputGroup>
                 </FormControl>
+                <FormControl id="password_confirmation">
+                  <FormLabel>Confirm Password</FormLabel>
+                  <InputGroup>
+                    <Input
+                      placeholder={"Enter Confirm Password"}
+                      onChange={handleChange}
+                      name="password_confirmation"
+                      value={user.password_confirmation}
+                      type={showPassword2 ? "text" : "password"}
+                    />
+                    <InputRightElement h={"full"}>
+                      <Button
+                        type={showPassword2 ? "text" : "password"}
+                        variant={"ghost"}
+                        onClick={() =>
+                          setShowPassword2((showPassword2) => !showPassword2)
+                        }
+                      >
+                        {showPassword2 ? <ViewIcon /> : <ViewOffIcon />}
+                      </Button>
+                    </InputRightElement>
+                  </InputGroup>
+                </FormControl>
 
                 <Stack>
                   <Button
                     type="submit"
                     bg={"rgba(255, 255, 255, 0.7)"}
                     mt={4}
+                    isLoading={isLoading}
                     color={"black"}
                     loadingText="Submitting"
                   >
