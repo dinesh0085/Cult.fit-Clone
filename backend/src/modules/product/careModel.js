@@ -11,6 +11,6 @@ exports.careModel = mongoose_1.default.model("care", new mongoose_1.default.Sche
     desc: String,
     dprice: String,
     price: Number,
-    tests: (Array),
-    recomends: (Array)
+    tests: [Object],
+    recomends: [Object],
 }));

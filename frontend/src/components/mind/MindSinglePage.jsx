@@ -14,7 +14,7 @@ const MindSinglePage=({setc})=> {
   const [test,setTest] = useState();
   const {id} = useParams()
   useEffect(()=>{
-    fetch(`http://localhost:8080/mind/${id}`)
+    fetch(`https://sore-erin-sockeye-tam.cyclic.app/mind/${id}`)
     .then((res)=>res.json())
     .then((data)=>{ setTest(data)})
     .catch((e)=>{console.log(e);})

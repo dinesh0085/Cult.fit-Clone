@@ -2,17 +2,17 @@ import express, { Request } from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
-import connectDb from "./config/connect";
+import connectDb from "./src/config/connect";
 import {
   careRouter,
   docterRouter,
   mindRouter,
-} from "./routes/product/productRoute";
-import userRoutes from "./routes/user/userRoutes";
-import { Orouter } from "./controller/user/oAuth/google";
-import { cartRouter } from "./routes/cartRouter";
-import checkUserAuth from "./middlewares/user/userMiddleware";
-import { AdminRouter } from "./routes/adminRouter";
+} from "./src/routes/product/productRoute";
+import userRoutes from "./src/routes/user/userRoutes";
+import { Orouter } from "./src/controller/user/oAuth/google";
+import { cartRouter } from "./src/routes/cartRouter";
+import checkUserAuth from "./src/middlewares/user/userMiddleware";
+import { AdminRouter } from "./src/routes/adminRouter";
 
 const mongoUrl = process.env.MONGOURL || "";
 const port = process.env.PORT || 8080;

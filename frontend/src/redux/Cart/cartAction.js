@@ -6,7 +6,7 @@ export const GetCart = "getcart";
 
 
 
-let url = `http://localhost:8080/cart`;
+let url = `https://sore-erin-sockeye-tam.cyclic.app/cart`;
 
 export const getCarts = (token) => async (dispatch) => {
     axios.defaults.headers.common["authorization"] = "Bearer " + token;

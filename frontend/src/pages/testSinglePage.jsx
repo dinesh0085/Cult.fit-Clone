@@ -27,7 +27,7 @@ const TestSinglePage = ({ setc }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/care/${id}`)
+    fetch(`https://sore-erin-sockeye-tam.cyclic.app/care/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTest(data);

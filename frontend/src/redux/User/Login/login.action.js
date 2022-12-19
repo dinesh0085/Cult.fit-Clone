@@ -10,7 +10,7 @@ import {
 } from "../user.types";
 
 const login = (info) => async (dispatch) => {
-  const loginUrl = "https://violet-sparrow-tutu.cyclic.app/api/user/login";
+  const loginUrl = "https://sore-erin-sockeye-tam.cyclic.app/api/user/login";
   dispatch({ type: LOGIN_LOADING });
   // On Success
   try {
@@ -40,7 +40,7 @@ const login = (info) => async (dispatch) => {
 
 export const getUser = (info) => async (dispatch) => {
   const loggedUserUrl =
-    "https://violet-sparrow-tutu.cyclic.app/api/user/loggedUser";
+    "https://sore-erin-sockeye-tam.cyclic.app/api/user/loggedUser";
 
   try {
     let res = await axios.get(

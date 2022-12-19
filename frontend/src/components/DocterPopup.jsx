@@ -49,7 +49,7 @@ const DocterPopup = ({ _id, isOpen, onOpen, onClose }) => {
                                 if (arr.includes(time + date + _id)) {
                                     setS("not available at this time please consult other docters")
                                     axios.defaults.headers.common["authorization"] = "Bearer " + localStorage.getItem("token");
-                                    let res = await axios.get(`http://localhost:8080/cart/docter`, {
+                                    let res = await axios.get(`https://sore-erin-sockeye-tam.cyclic.app/cart/docter`, {
                                         startTime: Date.now(), docter: _id
                                     });
                                     console.log(res.data);

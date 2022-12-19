@@ -34,7 +34,7 @@ const Therapy=()=>{
     const [mind,setMind] = useState([]);
 
   useEffect(()=>{
-    fetch("http://localhost:8080/mind")
+    fetch("https://sore-erin-sockeye-tam.cyclic.app/mind")
     .then((res)=>res.json())
     .then((data)=>{ setMind(data)})
     .catch((e)=>{console.log(e);})
