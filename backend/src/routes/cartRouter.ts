@@ -6,7 +6,7 @@ export const cartRouter = express.Router();
 
 cartRouter.get("/",getCart);
 cartRouter.post("/",setCart);
-cartRouter.delete("/",deleteCart);
+cartRouter.delete("/:id",deleteCart);
 
 cartRouter.get("/docter", getDocterCart)
 cartRouter.post("/docter", setDocterCart)

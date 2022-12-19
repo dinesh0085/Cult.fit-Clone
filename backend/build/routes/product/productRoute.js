@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.docterRouter = exports.mindRouter = exports.careRouter = void 0;
+const express_1 = __importDefault(require("express"));
+const docter_1 = require("../../controller/docter");
+const mindFull_1 = require("../../controller/product/mindFull");
+const product_1 = require("../../controller/product/product");
+const setProduct_1 = require("../../controller/product/setProduct");
+exports.careRouter = express_1.default.Router();
+exports.careRouter.get("/", product_1.getCare);
+exports.careRouter.get("/:id", product_1.getCareSingle);
+exports.careRouter.post("/", setProduct_1.setCare);
+exports.mindRouter = express_1.default.Router();
+exports.mindRouter.get("/", product_1.getMind);
+exports.mindRouter.get("/full", mindFull_1.getMindFull);
+exports.mindRouter.get("/:id", product_1.getMindSingle);
+exports.mindRouter.post("/", setProduct_1.setMind);
+exports.docterRouter = express_1.default.Router();
+exports.docterRouter.get("/", docter_1.getDocters);

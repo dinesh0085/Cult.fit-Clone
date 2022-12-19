@@ -422,7 +422,7 @@ export const FitnessIndex = () => {
                 </Flex>
             </Stack> 
 
-            <Box
+            {/* <Box
             mt="70px" 
             w="80%" 
             border="1px"
@@ -459,7 +459,7 @@ export const FitnessIndex = () => {
 
                     <Text color="blue.200">EXPLORE OFFERS</Text>
                 </Stack>
-            </Box>
+            </Box> */}
 
 
             {/* ----------- FAQs section ------------ */}

@@ -3,14 +3,20 @@ import { Box, Button, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { TimeIcon,CalendarIcon } from '@chakra-ui/icons'
 import { Link, useParams } from "react-router-dom";
+import { addCart } from "../redux/Cart/cartAction";
+import { useDispatch } from "react-redux";
 
 const id1="639879faae12ba6f42a8623a"
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzliM2ViMzVkY2EyODRkNGVkZmNjZWMiLCJpYXQiOjE2NzEzMzc4NDEsImV4cCI6MTY3MTc2OTg0MX0.gAyGngbn3cF5P1hv5kKD7O0aLjDdEuAmTtV04Q6Fu9g";
+// const token = "";
  
 const TestSinglePage=({setc})=> {
   setc("#15171C")
   const [test,setTest] = useState();
   const {id} = useParams()
   console.log(id);
+
+  const dispatch = useDispatch();
 
   useEffect(()=>{
     fetch(`http://localhost:8080/care/${id}`)
@@ -20,6 +26,17 @@ const TestSinglePage=({setc})=> {
   },[])
 
   console.log(test);
+
+  const handleAddCart = () => {
+    dispatch(addCart(test._id, token))
+    .then((res)=>{
+      if(res){
+        alert("Product added to cart successfully!")
+      } else{
+        alert("Please Login");
+      }
+    })
+  }
 
   return (
     <div className='care_main'> 
@@ -68,7 +85,7 @@ const TestSinglePage=({setc})=> {
        <CalendarIcon></CalendarIcon>  Report Ready in {test && test.tests.length*2} Hrs
        </Box>
 
-       <Button bg={"#fa3b52"} borderRadius="2rem" color="white" fontSize={"12px"}>Buy Now</Button>
+       <Button onClick={handleAddCart} bg={"#fa3b52"} borderRadius="2rem" color="white" fontSize={"12px"}>Buy Now</Button>
 
        </Box>
 

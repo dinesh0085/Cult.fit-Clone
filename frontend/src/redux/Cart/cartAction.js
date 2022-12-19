@@ -19,11 +19,19 @@ export const addCart = (product, token) => async (dispatch) => {
     let res = await axios.post(url, { product });
     console.log(res.data);
     dispatch({ type: AddCart, payload: { product: res.data, price: res.data.price, } })
+    
+    if(typeof res.data === 'object'){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 export const removeCart = (product, token) => async (dispatch) => {
+    console.log(token);
     axios.defaults.headers.common["authorization"] = "Bearer " + token;
-    let res = await axios.delete(url, { product });
-    dispatch({ type: RmoveCart, payload: { id: res.data._id } })
+    let res = await axios.delete(url+"/"+product);
+    // console.log(res);
+    dispatch({ type: RmoveCart, payload: { id: product } })
 }
 

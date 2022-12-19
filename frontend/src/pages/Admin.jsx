@@ -10,7 +10,7 @@ const Admin = () => {
 
     const Data = (e) => setData({ ...data, [e.target.name]: e.target.value });
 
-    const submit = (e) => axios.post("http://localhost:8080/" + data.type, data)
+    const submit = (e) => axios.post("http://18.182.4.15:8080/admin/login" + data.type, data)
         .then(r => console.log(r.data));
 
     const [login, setLogin] = useState(localStorage.getItem("admin") ? 0 : 1);

@@ -6,6 +6,7 @@ import { CustomRequest } from "../../middlewares/user/userMiddleware";
 
 export const getCart = async (req: Request, res: Response) => {
     const user = (req as CustomRequest).token;
+    
     try {
         let cart = await cartModel.find({ user: user });
         return res.send(cart);
@@ -33,8 +34,11 @@ export const setCart = async (req: Request, res: Response) => {
 };
 
 export const deleteCart = async (req: Request, res: Response) => {
-    const { product } = req.body;
+    const product = req.params.id;
     const user = (req as CustomRequest).token;
+    console.log("token", user);
+    console.log("id", product);
+    
     try {
         let cart = await cartModel.deleteOne({ user: user, product: product });
         let dcart = await cartModel.findByIdAndDelete(product);

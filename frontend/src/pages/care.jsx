@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./Care.module.css"
 
+
 function Care({setc}) {
 
   setc("#15171C")
