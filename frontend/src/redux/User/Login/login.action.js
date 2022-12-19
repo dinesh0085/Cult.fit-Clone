@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  GET_LOGGED_USER,
   LOGIN_ERROR,
   LOGIN_ERROR_EMPTY_FIELD,
   LOGIN_ERROR_INAVLID_DETAILS,
@@ -8,8 +9,8 @@ import {
   LOGIN_SUCCESS,
 } from "../user.types";
 
-const loginUrl = "http://localhost:8080/api/user/login";
 const login = (info) => async (dispatch) => {
+  const loginUrl = "https://violet-sparrow-tutu.cyclic.app/api/user/login";
   dispatch({ type: LOGIN_LOADING });
   // On Success
   try {
@@ -34,6 +35,29 @@ const login = (info) => async (dispatch) => {
     } else {
       dispatch({ type: LOGIN_ERROR, payload: errorMessage });
     }
+  }
+};
+
+export const getUser = (info) => async (dispatch) => {
+  const loggedUserUrl =
+    "https://violet-sparrow-tutu.cyclic.app/api/user/loggedUser";
+
+  try {
+    let res = await axios.get(
+      loggedUserUrl,
+      {},
+      {
+        headers: {
+          Authorization: `${info}`,
+        },
+      },
+    );
+
+    console.log(res);
+    dispatch({ type: GET_LOGGED_USER, payload: res });
+    return res;
+  } catch (err) {
+    console.log(err);
   }
 };
 

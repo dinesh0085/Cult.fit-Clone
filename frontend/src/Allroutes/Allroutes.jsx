@@ -20,6 +20,7 @@ import Dcotors from "../pages/Dcotors";
 import MindSinglePage from "../components/mind/MindSinglePage";
 import Cart from "../pages/Cart";
 import Profile from "../pages/User/Profile/Profile";
+import ProtectedRoute from "../PrivateRoute/ProtectedRoute";
 
 export const Allroutes = ({ setc }) => {
   return (
@@ -37,7 +38,14 @@ export const Allroutes = ({ setc }) => {
           path="/minddetails/:id"
           element={<MindSinglePage setc={setc} />}
         />
-        <Route path={"/profile/*"} element={<Profile />} />
+        <Route
+          path={"/profile/*"}
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </div>
   );

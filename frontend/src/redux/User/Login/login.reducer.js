@@ -5,6 +5,7 @@ import {
   LOGIN_ERROR_INAVLID_DETAILS,
   LOGIN_LOADING,
   LOGIN_SUCCESS,
+  GET_LOGGED_USER,
 } from "../user.types";
 
 let token = localStorage.getItem("token");
@@ -12,12 +13,8 @@ const initialState = {
   isLoading: false,
   isError: false,
   isAuth: false,
-  errorMessage: {
-    inavlidDetails: "",
-    emptyDeails: "",
-    notRegistered: "",
-    inavlid: "",
-  },
+  errorMessage: "",
+  successMessage: "",
   token: token || "",
 };
 
@@ -37,12 +34,8 @@ function loginReducer(state = initialState, action) {
         isLoading: false,
         isError: false,
         isAuth: true,
-        errorMessage: {
-          inavlidDetails: "",
-          emptyDeails: "",
-          notRegistered: "",
-          inavlid: "",
-        },
+        errorMessage: "",
+        successMessage: action.payload,
       };
     }
     case LOGIN_ERROR: {
@@ -51,12 +44,8 @@ function loginReducer(state = initialState, action) {
         isLoading: false,
         isError: true,
         isAuth: false,
-        errorMessage: {
-          inavlidDetails: "",
-          emptyDeails: "",
-          notRegistered: "",
-          inavlid: action.payload,
-        },
+        errorMessage: action.payload,
+        successMessage: "",
       };
     }
     case LOGIN_ERROR_INAVLID_DETAILS: {
@@ -65,12 +54,8 @@ function loginReducer(state = initialState, action) {
         isLoading: false,
         isError: false,
         isAuth: false,
-        errorMessage: {
-          inavlidDetails: action.payload,
-          emptyDeails: "",
-          notRegistered: "",
-          inavlid: "",
-        },
+        errorMessage: action.payload,
+        successMessage: "",
       };
     }
     case LOGIN_ERROR_EMPTY_FIELD: {
@@ -79,12 +64,8 @@ function loginReducer(state = initialState, action) {
         isLoading: false,
         isError: false,
         isAuth: false,
-        errorMessage: {
-          inavlidDetails: "",
-          emptyDeails: action.payload,
-          notRegistered: "",
-          inavlid: "",
-        },
+        errorMessage: action.payload,
+        successMessage: "",
       };
     }
     case LOGIN_ERROR_NOT_REGISTERED: {
@@ -93,12 +74,17 @@ function loginReducer(state = initialState, action) {
         isLoading: false,
         isError: false,
         isAuth: false,
-        errorMessage: {
-          inavlidDetails: "",
-          emptyDeails: "",
-          notRegistered: action.payload,
-          inavlid: "",
-        },
+        errorMessage: action.payload,
+        successMessage: "",
+      };
+    }
+
+    case GET_LOGGED_USER: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        userInfo: action.payload,
       };
     }
     default: {

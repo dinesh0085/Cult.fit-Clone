@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
   const store = useSelector((store) => store.login);
-  console.log(store.isAuth);
   if (!store.isAuth) {
     return <Navigate to={"/"} />;
   }

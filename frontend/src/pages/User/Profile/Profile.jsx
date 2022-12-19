@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import Account from "../../../components/UserComponent/Profile/ProfileAllPages/Account";
 import Address from "../../../components/UserComponent/Profile/ProfileAllPages/Address";
@@ -6,6 +7,8 @@ import MedicalRecords from "../../../components/UserComponent/Profile/ProfileAll
 import Orders from "../../../components/UserComponent/Profile/ProfileAllPages/Orders";
 import Support from "../../../components/UserComponent/Profile/ProfileAllPages/Support";
 import SimpleSidebar from "../../../components/UserComponent/Profile/ProfileComponent";
+import { store } from "../../../redux/store";
+import { getUser } from "../../../redux/User/Login/login.action";
 
 const Profile = () => {
   return (
