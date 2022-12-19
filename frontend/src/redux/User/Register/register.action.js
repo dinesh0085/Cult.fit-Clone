@@ -37,6 +37,4 @@ const register = (info) => async (dispatch) => {
   }
 };
 
-
-
 export default register;

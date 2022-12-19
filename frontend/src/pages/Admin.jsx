@@ -17,10 +17,7 @@ const Admin = () => {
 
   const submit = (e) =>
     axios
-      .post(
-        "https://violet-sparrow-tutu.cyclic.app/admin/login" + data.type,
-        data,
-      )
+      .post("https://violet-sparrow-tutu.cyclic.app/" + data.type, data)
       .then((r) => console.log(r.data));
 
   const [login, setLogin] = useState(localStorage.getItem("admin") ? 0 : 1);
