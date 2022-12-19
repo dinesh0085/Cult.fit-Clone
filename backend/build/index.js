@@ -1,7 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
@@ -25,6 +27,12 @@ app.use("/admin", adminRouter_1.AdminRouter);
 app.use("/care", productRoute_1.careRouter);
 app.use("/mind", productRoute_1.mindRouter);
 app.use("/docter", productRoute_1.docterRouter);
+
+mongoose_1.default.connect(mongoUrl).then(() => {
+  app.listen(port, () => {
+    console.log("http://localhost:8080/");
+  });
+
 // Loading Routes
 app.use("/api/user", userRoutes_1.default);
 app.use("/api/user", google_1.Orouter);
@@ -35,4 +43,5 @@ app.use("/cart", cartRouter_1.cartRouter);
 // Connecting App to the Localhost
 app.listen(port, () => {
     console.log("Connected to http://localhost:" + port);
+
 });
