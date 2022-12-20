@@ -9,6 +9,7 @@ import { CarePass } from "./CarePass";
 import { Elements } from "./elements";
 import {Crouser} from "./Crouser";
 import styles from "./c.module.css"
+import { TextAnimation } from "./TextAnimation";
 
 export const Scroll = () => {
   
@@ -26,7 +27,7 @@ export const Scroll = () => {
            <Pass/>
         </div>
          
-         <div className={style.mdiv}>
+     <div className={style.mdiv}>
          <div className={style.b}>
           <div data-aos="fade-down-left" data-aos-duration="2000">
             {" "}
@@ -127,6 +128,11 @@ export const Scroll = () => {
               alt=""
             />
           </div>
+        </div>
+
+
+        <div className={styles.tanimation}>
+          <TextAnimation/>
         </div>
          </div>
 
