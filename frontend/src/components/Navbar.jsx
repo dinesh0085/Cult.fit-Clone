@@ -17,12 +17,13 @@ export default function Navbar({ c }) {
   return (
     <>
       <nav className={style.Navbar} style={{ backgroundColor: c }}>
+        
         <NavLink to="/">
           <div className={style.logo}>
             <Nimg /> <h4>CARE&FIT</h4>
           </div>
         </NavLink>
-
+       
         <div className={style.middle}>
           <Link to="/">
             <div className={style.logo1}>
@@ -43,6 +44,7 @@ export default function Navbar({ c }) {
             <h5>DOCTOR</h5>
           </Link>
         </div>
+       
 
         <div className={style.right}>
           <span>
@@ -65,7 +67,8 @@ export default function Navbar({ c }) {
               <ShoppingCartIcon />
             </Link>
           </div>
-        </div>
+          </div>
+        
       </nav>
     </>
   );

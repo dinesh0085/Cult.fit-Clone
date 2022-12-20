@@ -116,11 +116,11 @@
 }
 
 .contant{
-    position: absolute;
+    position:  absolute;
    top:0;
   display: flex;
   justify-content: center;
-  z-index: 100;
+  z-index: 200;
   width: 100%;
   min-height: 800px;
   
@@ -245,6 +245,80 @@
    width: 100%;
 }
 
+@media screen and (max-width:1500px) {
+   #v_bag{
+  
+      display: block;
+      width: 100%;
+      transition: opacity 600ms ease 0s;
+      position: relative;
+      object-fit: cover;
+      height: 110vh;
+      will-change: transform;
+      opacity: 1;
+      
+   }
+   
+   .contant{
+      min-height: 700px;
+      
+    }
+   .left >svg:nth-child(1){
+      position: absolute;
+      left: -27.5%;
+      top: -12%;
+      width: 70%;
+    
+    
+   }
+   .left >svg:nth-child(2){
+      position: absolute;
+      left:-20%;
+      top: 43%;
+     
+     
+   }
+   .right >svg:nth-child(1){
+      position: absolute;
+      right: -23%;
+      top: -37%;
+      width: 68%;
+  
+   }
+   
+   .right >svg:nth-child(2){
+      position: absolute;
+      right: -7%;
+      top: 45%;
+      width: 50%;
+     
+  
+    
+   }
+
+   .imge{
+       
+      left: 27%;
+      top:27%;
+      
+     
+   
+  }
+  .imge img{
+    width: 650px;
+    height: 450px;
+  }
+  .Button{
+   position: absolute;
+  left:45%;
+   top:88%;
+   padding: 7px 10px 7px 10px;
+   font-size: 16px;
+
+}
+
+}
+
 @media screen and (max-width:1200px) {
    .mainbody{
    
@@ -260,7 +334,7 @@
       transition: opacity 600ms ease 0s;
       position: relative;
       object-fit: cover;
-      height: 75vh;
+      height: 100vh;
       will-change: transform;
       opacity: 1;
       
@@ -273,8 +347,8 @@
      
     .left >svg:nth-child(1){
        position: absolute;
-       left: -30.5%;
-       top: 16.6%;
+       left: -28.5%;
+       top: -1.6%;
        width: 70%;
       height: auto;
        align-self: flex-end;
@@ -284,7 +358,7 @@
     .left >svg:nth-child(2){
        position: absolute;
        left:-22%;
-       top: 53%;
+       top: 50%;
        width: 63%;
       height: auto;
        align-self: flex-end;
@@ -294,7 +368,7 @@
     .right >svg:nth-child(1){
        position: absolute;
        right: -22%;
-       top: -27%;
+       top: -34%;
        width: 62%;
    
     }
@@ -302,7 +376,7 @@
     .right >svg:nth-child(2){
        position: absolute;
        right: -17%;
-       top: 50%;
+       top: 47%;
        width: 60%;
       
    
@@ -311,7 +385,7 @@
      
     .imge{
        
-        left: 15%;
+        left: 23%;
         top:26%;
         
        
@@ -324,7 +398,7 @@
      
     .Button{
        position: absolute;
-      left:40%;
+      left:43%;
        top:85%;
        padding: 7px 10px 7px 10px;
        font-size: 16px;
@@ -399,23 +473,19 @@
 }
   
  
-}
-
+} 
  
-@media screen and (max-width: 700px) {
-    
-    
-  
-    
+@media screen and (max-width: 800px) {
+     
     .contant{
-      min-height: 600px;
+      min-height: 700px;
       
     }
      
     .left >svg:nth-child(1){
        position: absolute;
-       left: -34.5%;
-       top: 23.6%;
+       left: -28%;
+       top: 12.6%;
        width: 70%;
       height: auto;
        align-self: flex-end;
@@ -424,8 +494,8 @@
     }
     .left >svg:nth-child(2){
        position: absolute;
-       left:-25%;
-       top: 50%;
+       left:-22%;
+       top: 46%;
        width: 63%;
       height: auto;
        align-self: flex-end;
@@ -452,7 +522,77 @@
      
     .imge{
        
-        left: 12%;
+        left: 28%;
+        top:27%;
+       
+     
+    }
+    .imge img{
+      width: 350px;
+      height: 350px;
+    }
+     
+    .Button{
+       position: absolute;
+       left: 40%;
+       top:70%;
+       padding: 4px 14px 4px 14px;
+       font-size: 16px;
+ 
+    }
+
+}
+@media screen and (max-width: 700px) {
+    
+    
+  
+    
+    .contant{
+      min-height: 600px;
+      
+    }
+     
+    .left >svg:nth-child(1){
+       position: absolute;
+       left: -26.5%;
+       top: 10.6%;
+       width: 70%;
+      height: auto;
+       align-self: flex-end;
+       z-index: 100;
+     
+    }
+    .left >svg:nth-child(2){
+       position: absolute;
+       left:-18%;
+       top: 46%;
+       width: 63%;
+      height: auto;
+       align-self: flex-end;
+       z-index: 100;
+      
+    }
+    .right >svg:nth-child(1){
+       position: absolute;
+       right: -23%;
+       top: -27%;
+       width: 62%;
+   
+    }
+    
+    .right >svg:nth-child(2){
+       position: absolute;
+       right: -20%;
+       top: 45%;
+       width: 60%;
+      
+   
+     
+    }
+     
+    .imge{
+       
+        left: 30%;
         top:27%;
        
      
@@ -464,8 +604,8 @@
      
     .Button{
        position: absolute;
-       left: 28%;
-       top:70%;
+       left: 40%;
+       top:73%;
        padding: 4px 14px 4px 14px;
        font-size: 16px;
  
@@ -530,6 +670,141 @@
 }
 
 
+
+
+ }
+
+
+ @media screen and (max-width: 500px) {
+
+       
+    
+    .contant{
+      min-height: 600px;
+      
+    }
+     
+    .left >svg:nth-child(1){
+       position: absolute;
+       left: -30%;
+       top: 25.6%;
+       width: 70%;
+      height: auto;
+       align-self: flex-end;
+       z-index: 100;
+     
+    }
+    .left >svg:nth-child(2){
+       position: absolute;
+       left:-22%;
+       top: 51%;
+       width: 63%;
+      height: auto;
+       align-self: flex-end;
+       z-index: 100;
+      
+    }
+    .right >svg:nth-child(1){
+       position: absolute;
+       right: -25%;
+       top: -17%;
+       width: 62%;
+   
+    }
+    
+    .right >svg:nth-child(2){
+       position: absolute;
+       right: -21%;
+       top: 49%;
+       width: 60%;
+      
+   
+     
+    }
+     
+    .imge{
+       
+        left: 16%;
+        top:30%;
+       
+     
+    }
+    .imge img{
+      width: 300px;
+      height: 300px;
+    }
+     
+    .Button{
+       position: absolute;
+       left: 31.5%;
+       top:75%;
+       padding: 4px 14px 4px 14px;
+       font-size: 16px;
+ 
+    }
+
+ }
+
+ @media screen and (max-width: 400px) {
+
+   .left >svg:nth-child(1){
+      position: absolute;
+      left: -31%;
+      top: 27.6%;
+      width: 70%;
+     height: auto;
+      align-self: flex-end;
+      z-index: 100;
+    
+   }
+   .left >svg:nth-child(2){
+      position: absolute;
+      left:-22%;
+      top: 51%;
+      width: 63%;
+     height: auto;
+      align-self: flex-end;
+      z-index: 100;
+     
+   }
+   .right >svg:nth-child(1){
+      position: absolute;
+      right: -27%;
+      top: -15%;
+      width: 62%;
+  
+   }
+   
+   .right >svg:nth-child(2){
+      position: absolute;
+      right: -23%;
+      top: 49%;
+      width: 60%;
+     
+  
+    
+   }
+    
+   .imge{
+      
+       left: 12%;
+       top:30%;
+      
+    
+   }
+   .imge img{
+     width: 300px;
+     height: 300px;
+   }
+    
+   .Button{
+      position: absolute;
+      left: 30%;
+      top:75%;
+      padding: 4px 14px 4px 14px;
+      font-size: 16px;
+
+   }
 
 
  }
