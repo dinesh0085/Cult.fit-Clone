@@ -13,3 +13,4 @@ export const SIGNUP_ERROR_CONF_PASSWORD = "auth/signup/conf_password";
 export const SIGNUP_ERROR_EMPTY_FIELD = "auth/signup/empty_field";
 
 export const GET_LOGGED_USER = "auth/loggedUser";
+export const LOG_OUT = "auth/log_out";
