@@ -68,12 +68,17 @@ export const FitnessCarousalTop = () => {
             bgColor={content[index].bgColor}
             mt="60px"
             minH="150px"
+            direction={{base:"column", md:"row"}}
             >
-                <Stack textAlign="left" w="60%">
-                    <Heading fontSize="3xl">{content[index].heading}</Heading>
+                <Stack textAlign="left" w={{base:"100%", md:"60%"}}>
+                    <Heading 
+                    fontSize= "3xl"
+                    >{content[index].heading}</Heading>
                     <Text fontSize="xl">{content[index].about}</Text>
                 </Stack>
-                <Stack w="35%">
+                <Stack 
+                w={{base:"100%", md:"35%"}}
+                >
                     <Text fontSize="xl">--- Ends In ---</Text>
                     <Text fontSize="4xl">{content[index].time}</Text>
                 </Stack>

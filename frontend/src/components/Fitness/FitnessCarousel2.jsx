@@ -57,7 +57,7 @@ export const FitnessCarousel2 = () => {
               }
             },
             {
-              breakpoint: 600,
+              breakpoint: 768,
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
@@ -65,7 +65,7 @@ export const FitnessCarousel2 = () => {
               }
             },
             {
-              breakpoint: 480,
+              breakpoint: 515,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1
@@ -84,7 +84,11 @@ export const FitnessCarousel2 = () => {
                                 <Image borderRadius="20px 20px 0 0" w="100%" h="250px" src={item.img} />
                             </Box>
                             <Box minH="180px" bgColor="gray.600" pb="5px" borderRadius="0 0 20px 20px">
-                                <Flex p="20px" mt="10px" justifyContent="space-between">
+                                <Flex p="20px" mt="10px" 
+                                justifyContent="space-between"
+                                textAlign="left"
+                                direction={{base:"column", lg:"row"}}
+                                >
                                     <Stack textAlign="left">
                                         <Heading noOfLines={1} fontSize="4xl">{item.title}</Heading>
                                         <HStack>
@@ -108,7 +112,12 @@ export const FitnessCarousel2 = () => {
                                         </HStack>
                                     </Stack>
                                     <Box>
-                                        <Button bgColor="gray.600">{item.buttonText}</Button>
+                                        <Button 
+                                        bgColor="gray.500"
+                                        _hover={{
+                                            bgColor:"gray.800"
+                                        }}
+                                        >{item.buttonText}</Button>
                                     </Box>
                                 </Flex>
                                 {(i !== content.length-1) ? <Divider /> : <Text></Text>}

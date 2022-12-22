@@ -20,7 +20,8 @@ import Dcotors from "../pages/Dcotors";
 import MindSinglePage from "../components/mind/MindSinglePage";
 import Cart from "../pages/Cart";
 import Profile from "../pages/User/Profile/Profile";
-import ProtectedRoute from "../PrivateRoute/ProtectedRoute";
+import ProtectedRoute from "../privateroute/ProtectedRoute";
+import { FitnessNavbar } from "../components/Fitness/FitnessNavbar";
 
 export const Allroutes = ({ setc }) => {
   return (

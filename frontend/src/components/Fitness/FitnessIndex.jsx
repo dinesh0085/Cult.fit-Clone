@@ -1,14 +1,14 @@
 import { CheckIcon, MinusIcon } from "@chakra-ui/icons";
 import { BsDot } from "react-icons/bs";
-import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, List, ListIcon, ListItem, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, List, ListIcon, ListItem, Show, Stack, Text } from "@chakra-ui/react"
 import { FitnessCarousel2 } from "./FitnessCarousel2";
 import { FitnessCarousalTop } from "./FitnessCarouselTop";
-import styles from "./FitnessIndex.module.css";
 import { Plans } from "./Plans";
 import { TbDiscount } from "react-icons/tb";
 import { FAQs } from "./FAQs";
 import { SliderComponent } from "./SliderComponent";
 import { useEffect, useRef, useState } from "react";
+import { TopCards } from "./TopCards";
 
 const midSectionContent = [
     {
@@ -87,62 +87,26 @@ export const FitnessIndex = () => {
         {/* --------- Top view ------------  */}
            
             <Box
-            minH="110vh"
+            minH="100vh"
             bgImage="url('https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_1600,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/838176af-9e82-4817-b9b4-e4bd03ed7271.png')"
             position="relative"
+            bgRepeat="no-repeat"
+            bgSize="100% 100%"            
             >
-                <Button fontWeight="bold" color="red.400" mt="35%">TRY FOR FREE</Button>
+                <Button 
+                fontWeight="bold" 
+                color="red.400" 
+                mt={{base:"70%", md: "50%", lg:"25%"}}
+                >TRY FOR FREE</Button>
 
-                <Flex 
-                w="100%"
-                position="absolute" 
-                p="10px" 
-                bottom="0"
-                justifyContent="center"
-                gap="25px" 
-                color="white">
-                    <Stack
-                    spacing="15px"
-                    className={styles.card}
-                    bgColor="blue.900"
-                    _hover={{
-                        bgColor:"blue.800"
-                    }}
-                    >
-                        <Text fontSize="3xl" color="whiteAlpha.700" fontWeight="bold">carepass</Text>
-                        <Center>
-                            <Image display="block" m="auto" w="100px" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_107,q_auto:eco,dpr_1,f_auto,fl_progressive//image/test/brand-logo/cult-pass-elite-partial.png" alt="elite" />
-                        </Center>
-                        <Text color="whiteAlpha.700" fontWeight="bold" fontSize="1.1rem">Starting at rs. 1035/month</Text>
-                    </Stack>
-                    <Stack 
-                    spacing="15px" 
-                    className={styles.card}
-                    bgColor="blue.900"
-                    _hover={{
-                        bgColor:"blue.800"
-                    }}>
-                        <Text fontSize="3xl" color="whiteAlpha.700" fontWeight="bold">carepass</Text>
-                        <Center>
-                        <Image  w="100px" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_78,q_auto:eco,dpr_1,f_auto,fl_progressive//image/test/brand-logo/cult-pass-pro-partial.png" alt="PRO" />
-                        </Center>
-                        <Text color="whiteAlpha.700" fontWeight="bold" fontSize="1.1rem">Starting at rs. 678/month</Text>
-                    </Stack>
-                    <Stack 
-                    spacing="15px" 
-                    className={styles.card}
-                    bgColor="blue.900"
-                    _hover={{
-                        bgColor:"blue.800"
-                    }}>
-                        <Text fontSize="3xl" color="whiteAlpha.700" fontWeight="bold">carepass</Text>
-                        <Center>
-                        <Image w="120px" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_112,q_auto:eco,dpr_1,f_auto,fl_progressive//image/test/brand-logo/cult-pass-home-partial-1.svg" alt="home" />
-                        </Center>
-                        <Text color="whiteAlpha.700" fontWeight="bold" fontSize="1.1rem">Starting at rs. 117/month</Text>
-                    </Stack>
-                </Flex>
+                <Show above="md">
+                    <TopCards />
+                </Show>
             </Box>
+
+            <Show below="md">
+                <TopCards />
+            </Show>
 
             {/* ------- Carousal ---------  */}
             
@@ -155,7 +119,9 @@ export const FitnessIndex = () => {
             w="80%"
             my="60px"
             alignItems="center"
-            justifyContent="space-between">
+            justifyContent="space-between"
+            direction={{base:"column", md:"row"}}
+            >
                 <HStack>
                     <Heading fontSize="3xl">Centers near</Heading>
                     <Text fontSize="xl" textDecor="underline">Hinjewadi</Text>
@@ -183,17 +149,20 @@ export const FitnessIndex = () => {
             </Box>
             
 
-            {/* ----- carousel------------ */}
 
-            <Flex w="70%" justifyContent="space-between">
+            <Flex w="70%" 
+            justifyContent="space-between"
+            direction={{base:"column", md:"row"}}
+            gap="10px"
+            >
                 {
                     midSectionContent.map((item, i) => (
-                        <Box w="32%" position="relative" >
+                        <Box w={{base:"100%", md:"32%"}} position="relative" >
                             <Image borderTopLeftRadius="10px" borderTopRightRadius="10px"  w="100%" h="200px" src={item.image} />
                             <Stack spacing={3} borderRadius="0 0 10px 10px" textAlign="center" bgColor="gray.700" p="10px">
                                 <Text fontSize="1.1rem" color="whiteAlpha.700">{item.name}</Text>
                                 <Heading fontSize="2xl">{item.course}</Heading>
-                                <Flex alignItems="center" color="whiteAlpha.700" justifyContent="center" gap="5px">
+                                <Flex flexWrap="wrap" alignItems="center" color="whiteAlpha.700" justifyContent="center" gap="5px">
                                     <Text>{item.courseType}</Text>
                                     <Icon fontSize="xl" as={BsDot} />
                                     <Text>{item.level}</Text>
@@ -232,18 +201,37 @@ export const FitnessIndex = () => {
 
             <Heading fontSize="5xl" my="50px" mt="130px">FREE TRIALS</Heading> 
 
-            <Flex h="400px" w="60%" justifyContent="space-between" alignItems="center">
-                <Image h="90%" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/22ae2a86-60e9-4de3-9180-678f40b69eb0.png" />
+            <Flex 
+            h={{base:"300px", "1024":"350px", lg:"400px"}} 
+            w="60%" 
+            justifyContent="space-between" 
+            alignItems="center"
+            gap="20px"
+            direction={{base:"column", md:"row"}}
+            // border="1px"
+            >
+                <Box  w= {{base:"100%", md:"33%"}}>
+                    <Image h={{base:"100%", md:"90%"}} src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/22ae2a86-60e9-4de3-9180-678f40b69eb0.png" />
+                </Box>
+                <Box w= {{base:"100%", md:"33%"}}>
+                    <Image h="100%" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/2ce1e296-e894-4f65-9dc1-d6ed11c031ae.png" />
+                </Box>
+                <Box w= {{base:"100%", md:"33%"}}>
+                    <Image h={{base:"100%", md:"90%"}} src = "https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/1300abe0-318e-489c-8205-dc770cfe6e54.png" />
+                </Box>
                
-                <Image h="100%" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/2ce1e296-e894-4f65-9dc1-d6ed11c031ae.png" />
               
-                <Image h="90%" src = "https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_300,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/1300abe0-318e-489c-8205-dc770cfe6e54.png" />
               
             </Flex>   
 
 
-            <Flex mt="100px" ml="10%" w="80%" justifyContent="space-between">
-                <Stack spacing="20px" w="45%" textAlign="left">
+            <Flex mt="100px" 
+            ml="10%" w="80%" 
+            justifyContent="space-between"
+            direction={{base:"column", md:"row"}}
+            gap="20px"
+            >
+                <Stack spacing="20px" w={{md:"45%"}} textAlign="left">
                     <Heading fontSize="4xl">
                         carepass <Text as="span" color="orange.300">ELITE</Text>
                     </Heading>
@@ -283,7 +271,7 @@ export const FitnessIndex = () => {
                     </Stack>
 
                 </Stack>
-                <Box w="52%">
+                <Box w={{md:"52%"}}>
                     <Image borderRadius="20px" src={images1[index].url} />
                     <Flex gap="10px" justifyContent="center">
                     {
@@ -299,8 +287,14 @@ export const FitnessIndex = () => {
                 </Box>
             </Flex> 
 
-            <Flex mt="100px" pb="100px" ml="10%" w="80%" justifyContent="space-between">
-                <Box w="52%">
+            <Flex 
+            mt="100px" pb="100px" 
+            ml="10%" w="80%" 
+            justifyContent="space-between"
+            direction={{base:"column", md:"row"}}
+            gap="20px"
+            >
+                <Box w={{md:"52%"}}>
                     <Image borderRadius="20px" src={images2[index].url} />
                     <Flex gap="10px" justifyContent="center">
                     {
@@ -313,7 +307,7 @@ export const FitnessIndex = () => {
                     }
                     </Flex>
                 </Box>
-                <Stack spacing="20px" w="45%" textAlign="left">
+                <Stack spacing="20px" w={{md:"45%"}} textAlign="left">
                     <Heading fontSize="4xl">
                         carepass <Text as="span" color="orange.300">PRO</Text>
                     </Heading>
@@ -371,8 +365,7 @@ export const FitnessIndex = () => {
             p="30px"
             spacing="5"
             borderRadius="20px"
-            // bgImage="url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZXhlcmNpc2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')"
-            bgImage= "url('https://www.advancedgynecology.com/wp-content/uploads/2021/11/Exercise-Induced-1184x736.jpg')"
+            bgImage="url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600)"
             bgRepeat='no-repeat'
             // bgSize="100% 100%"
             bgSize="cover"
@@ -410,7 +403,7 @@ export const FitnessIndex = () => {
 
                 <Stack>
                     <Text color="whiteAlpha.700" fontSize="xl">Starting at Rs.117/month</Text>
-                    <Flex gap="5">
+                    <Flex direction={{base:"column", lg:"row"}} gap="5">
                         <Button fontWeight="bold" bgColor="gray">TRY FOR FREE</Button>
                         <Button fontWeight="bold" color="red.400">BUY NOW</Button>
                     </Flex>
