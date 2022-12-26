@@ -1,11 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Account = () => {
-  return (
-    <div>
-      <h1>Account</h1>
-    </div>
-  );
+  const { userInfo } = useSelector((store) => store.login);
+  console.log(userInfo);
+  return <div></div>;
 };
 
 export default Account;

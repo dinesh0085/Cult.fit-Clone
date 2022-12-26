@@ -7,10 +7,11 @@ import {
   LOGIN_ERROR_NOT_REGISTERED,
   LOGIN_LOADING,
   LOGIN_SUCCESS,
+  LOG_OUT,
 } from "../user.types";
 
 const login = (info) => async (dispatch) => {
-  const loginUrl = "https://violet-sparrow-tutu.cyclic.app/api/user/login";
+  const loginUrl = "https://sore-erin-sockeye-tam.cyclic.app/api/user/login";
   dispatch({ type: LOGIN_LOADING });
   // On Success
   try {
@@ -40,25 +41,19 @@ const login = (info) => async (dispatch) => {
 
 export const getUser = (info) => async (dispatch) => {
   const loggedUserUrl =
-    "https://violet-sparrow-tutu.cyclic.app/api/user/loggedUser";
-
+    "https://sore-erin-sockeye-tam.cyclic.app/api/user/loggedUser";
+  // const token = localStorage.getItem("token");
+  console.log(info);
+  axios.defaults.headers.common["authorization"] = "Bearer " + info;
   try {
-    let res = await axios.get(
-      loggedUserUrl,
-      {},
-      {
-        headers: {
-          Authorization: `${info}`,
-        },
-      },
-    );
+    let res = await axios.get(loggedUserUrl);
 
-    console.log(res);
-    dispatch({ type: GET_LOGGED_USER, payload: res });
-    return res;
+    dispatch({ type: GET_LOGGED_USER, payload: res.data });
   } catch (err) {
     console.log(err);
   }
 };
+
+export const logout = () => ({ type: LOG_OUT });
 
 export default login;

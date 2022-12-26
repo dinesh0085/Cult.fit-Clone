@@ -18,17 +18,18 @@ const LoginForm = ({ onClose }) => {
   const dispatch = useDispatch();
   const { isLoading, errorMessage, successMessage, isError, isAuth } =
     useSelector((store) => store.login);
-  const info = localStorage.getItem("token");
+
   const [user, setUser] = React.useState({ email: "", password: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(user));
-    dispatch(getUser(info));
+    dispatch(getUser());
     setUser({
       email: "",
       password: "",

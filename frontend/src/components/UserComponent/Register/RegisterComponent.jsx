@@ -2,6 +2,8 @@ import {
   Box,
   Button,
   Image,
+  Link,
+  LinkBox,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -54,18 +56,25 @@ const RegisterComponent = () => {
           <Image h={60} m={"auto"} src={Logo} alt={"Care&Fit Logo"} />
           <ModalBody minH={"350px"}>
             {/* Google SignIn Here */}
-            <Button
-              display={"flex"}
-              w={"100%"}
-              bg={"rgba(255, 255, 255, 0.7)"}
-              mt={4}
-              color={"black"}
-              justifyContent={"space-between"}
-              type="submit"
+            <Link
+              href={
+                "https://sore-erin-sockeye-tam.cyclic.app/api/user/google/callback"
+              }
+              target={"blank"}
             >
-              <Text>Sign in with Google</Text>
-              <AiOutlineGoogle />
-            </Button>
+              <Button
+                display={"flex"}
+                w={"100%"}
+                bg={"rgba(255, 255, 255, 0.7)"}
+                mt={4}
+                color={"black"}
+                justifyContent={"space-between"}
+                type="submit"
+              >
+                <Text>Sign in with Google</Text>
+                <AiOutlineGoogle />
+              </Button>
+            </Link>
             {/* Facebook Login Here */}
             <Button
               display={"flex"}

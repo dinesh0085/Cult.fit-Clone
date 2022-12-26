@@ -6,6 +6,7 @@ import {
   LOGIN_LOADING,
   LOGIN_SUCCESS,
   GET_LOGGED_USER,
+  LOG_OUT,
 } from "../user.types";
 
 let token = localStorage.getItem("token");
@@ -16,6 +17,7 @@ const initialState = {
   errorMessage: "",
   successMessage: "",
   token: token || "",
+  userInfo: [],
 };
 
 function loginReducer(state = initialState, action) {
@@ -85,6 +87,17 @@ function loginReducer(state = initialState, action) {
         isLoading: false,
         isError: false,
         userInfo: action.payload,
+      };
+    }
+    case LOG_OUT: {
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        isAuth: false,
+        successMessage: "",
+        userInfo: [],
       };
     }
     default: {

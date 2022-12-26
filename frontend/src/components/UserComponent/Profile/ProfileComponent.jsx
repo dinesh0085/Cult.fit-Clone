@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Flex,
@@ -15,9 +15,11 @@ import { BsCart3 } from "react-icons/bs";
 import { BiSupport } from "react-icons/bi";
 import { FaUserEdit } from "react-icons/fa";
 import { TfiHeartBroken } from "react-icons/tfi";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import MobileNav from "./MobileNavProfile";
 import { AiOutlinePoweroff } from "react-icons/ai";
+import { getUser, logout } from "../../../redux/User/Login/login.action";
+import { useDispatch, useSelector } from "react-redux";
 
 const LinkItems = [
   { name: "Account", icon: FiSettings, href: "/profile/account" },
@@ -31,9 +33,18 @@ const LinkItems = [
   { name: "Support", icon: BiSupport, href: "/profile/support" },
 ];
 
-export default function SimpleSidebar({ children, token }) {
+export default function SimpleSidebar({ children }) {
+  const { isAuth } = useSelector((store) => store.login);
+  const dispatch = useDispatch();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
-  
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (isAuth) {
+      dispatch(getUser(token));
+    }
+  }, []);
   return (
     <Box minH="100vh">
       <SidebarContent
@@ -63,6 +74,9 @@ export default function SimpleSidebar({ children, token }) {
 }
 
 const SidebarContent = ({ onClose, children, ...rest }) => {
+  const dispatch = useDispatch();
+  const { userInfo } = useSelector((store) => store.login);
+
   return (
     <Box
       bg={useColorModeValue("white", "gray.900")}
@@ -89,8 +103,9 @@ const SidebarContent = ({ onClose, children, ...rest }) => {
           fontFamily="monospace"
           fontWeight="bold"
         >
-          Users Information Here
+          {userInfo?.User?.name}
         </Text>
+        {userInfo?.User?.email}
       </Box>
       {LinkItems.map((link) => (
         // <NavItem
@@ -119,7 +134,12 @@ const SidebarContent = ({ onClose, children, ...rest }) => {
           isActive ? styles.active : styles.default
         }
       >
-        <Flex justifyContent={"space-between"} px={6} py={6}>
+        <Flex
+          onClick={() => dispatch(logout())}
+          justifyContent={"space-between"}
+          px={6}
+          py={6}
+        >
           <Text color={"black"}>Log Out</Text>
           {/* {children} */}
           <Icon as={AiOutlinePoweroff} />
