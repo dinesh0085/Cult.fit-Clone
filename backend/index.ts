@@ -25,7 +25,7 @@ app.use(express.json());
 // Just for checking the Home Route
 app.all("/", (req, res) => res.send("working"));
 
-app.use("/admin",AdminRouter);
+app.use("/admin", AdminRouter);
 app.use("/care", careRouter);
 app.use("/mind", mindRouter);
 app.use("/docter", docterRouter);

@@ -27,7 +27,7 @@ const TestSinglePage = ({ setc }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(`https://sore-erin-sockeye-tam.cyclic.app/care/${id}`)
+    fetch(`https://starter-express-api-nine.vercel.app/care/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTest(data);

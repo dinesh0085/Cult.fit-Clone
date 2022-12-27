@@ -6,7 +6,7 @@ export const GetCart = "getcart";
 
 
 
-let url = `https://sore-erin-sockeye-tam.cyclic.app/cart`;
+let url = `https://starter-express-api-nine.vercel.app/cart`;
 
 export const getCarts = (token) => async (dispatch) => {
     axios.defaults.headers.common["authorization"] = "Bearer " + token;

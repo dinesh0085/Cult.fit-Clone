@@ -13,7 +13,7 @@ const Dcotors = ({ setc }) => {
   function getData() {
     axios.defaults.headers.common["authorization"] = "Bearer " + token;
     axios
-      .get("https://sore-erin-sockeye-tam.cyclic.app/docter?limit=50")
+      .get("https://starter-express-api-nine.vercel.app/docter?limit=50")
       .then((r) => setData(r.data));
   }
   useEffect(() => getData(), []);
@@ -51,7 +51,7 @@ const Dcotors = ({ setc }) => {
             axios
               .get(
                 "https://sore-erin-sockeye-tam.cyclic.app/docter?limit=50&search=" +
-                  e.target.value,
+                  e.target.value
               )
               .then((r) => setData(r.data));
           }}

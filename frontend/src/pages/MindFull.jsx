@@ -4,7 +4,7 @@ import styles from "./mindFull.module.css";
 const MindFull = () => {
   const [data, setData] = useState([]);
   function getData() {
-    fetch("https://sore-erin-sockeye-tam.cyclic.app/mind/full")
+    fetch("https://starter-express-api-nine.vercel.app/mind/full")
       .then((r) => r.json())
       .then((r) => (r ? setData(r) : setData([])));
   }

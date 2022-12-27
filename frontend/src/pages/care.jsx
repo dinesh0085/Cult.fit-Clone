@@ -20,7 +20,7 @@ function Care({ setc }) {
   const [care, setCare] = useState([]);
 
   useEffect(() => {
-    fetch("https://sore-erin-sockeye-tam.cyclic.app/care")
+    fetch("https://starter-express-api-nine.vercel.app/care")
       .then((res) => res.json())
       .then((data) => {
         setCare(data);

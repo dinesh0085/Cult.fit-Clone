@@ -8,7 +8,8 @@ import {
   SIGNUP_SUCCESS,
 } from "../user.types";
 
-const registerUrl = "https://sore-erin-sockeye-tam.cyclic.app/api/user/register";
+const registerUrl =
+  "https://starter-express-api-nine.vercel.app/api/user/register";
 const register = (info) => async (dispatch) => {
   console.log(info);
   dispatch({ type: SIGNUP_LOADING });
