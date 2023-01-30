@@ -1,4 +1,8 @@
 import {  Show, Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react"
+import { CarepassElite } from "./Elite/CarepassElite"
+import { CarepassHome } from "./CareHome/CarepassHome"
+import { CarepassPRO } from "./PRO/CarepassPRO"
+import { CarepassTransform } from "./Transform/CarepassTransform"
 import { FitnessIndex } from "./FitnessIndex"
 
 
@@ -8,25 +12,25 @@ export const FitnessNavbar = () =>{
         <Show above="md">
             <Tabs isManual align="center" position="sticky" variant="soft-rounded" colorScheme="gray">
                 <TabList padding="10px"  bgColor="#393A3B">
-                    <Tab color="whiteAlpha.800">cultpass ELITE</Tab>
-                    <Tab color="whiteAlpha.800">cultpass PRO</Tab>
-                    <Tab color="whiteAlpha.800">cultpass Home</Tab>
-                    <Tab color="whiteAlpha.800">cult Transform</Tab>
+                    <Tab color="whiteAlpha.800">carepass ELITE</Tab>
+                    <Tab color="whiteAlpha.800">carepass PRO</Tab>
+                    <Tab color="whiteAlpha.800">carepass Home</Tab>
+                    <Tab color="whiteAlpha.800">care Transform</Tab>
                     <Tab ml="20%" bgColor="gray.500" color="white">Buy Now</Tab>
                 </TabList>
 
                 <TabPanels >
                     <TabPanel padding="0px">
-                        <FitnessIndex />
+                        <CarepassElite/>
                     </TabPanel>
                     <TabPanel padding="0px">
-                        <FitnessIndex />
+                        <CarepassPRO />
                     </TabPanel>
                     <TabPanel padding="0px">
-                        <FitnessIndex />                
+                        <CarepassHome />                
                     </TabPanel>
                     <TabPanel padding="0px">
-                        <FitnessIndex />                
+                        <CarepassTransform />                
                     </TabPanel>
                     <TabPanel padding="0px">
                         <FitnessIndex />                
