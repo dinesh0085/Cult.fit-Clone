@@ -1,13 +1,11 @@
-import { CheckIcon, MinusIcon } from "@chakra-ui/icons";
+import { CheckIcon } from "@chakra-ui/icons";
 import { BsDot } from "react-icons/bs";
 import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, List, ListIcon, ListItem, Show, Stack, Text } from "@chakra-ui/react"
 import { FitnessCarousel2 } from "../FitnessCarousel2";
 import { FitnessCarousalTop } from "../FitnessCarouselTop";
 import { Plans } from "../Plans";
-import { TbDiscount } from "react-icons/tb";
 import { FAQs } from "../FAQs";
 import { SliderComponent } from "../SliderComponent";
-import { useEffect, useRef, useState } from "react";
 import { TopCards } from "../TopCards";
 
 const midSectionContent = [
@@ -40,46 +38,8 @@ const midSectionContent = [
     }
 ]
 
-const images1 = [
-    {url:"https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/black1.png"},
-    {url:"https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/black2.png"},
-];
-
-const images2 = [
-    {url:"https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/gold1.png"},
-    {url:"https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/gold2.png"},
-];
 
 export const CarepassHome = () => {
-    const [index, setIndex] = useState(0);
-
-    const inputIndex = useRef(null);
-
-    const handleClick= (i) =>{
-        clearInterval(inputIndex.current);
-        inputIndex.current = null;
-        setIndex(i);
-        handleInterval();
-    }
-
-    const handleInterval = () => {
-        if(inputIndex.current == null){
-            inputIndex.current = setInterval(()=>{
-                setIndex(prev => {
-                    if(prev === images1.length-1)
-                        return 0;
-                    else    
-                        return prev+1;
-                });
-            }, 3000);
-        }
-    }
-    useEffect(()=>{
-        handleInterval();
-    }, [index]);
-
-
-
 
     return (
         <Box bgColor="#12151A" color="white">

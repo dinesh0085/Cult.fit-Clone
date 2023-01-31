@@ -1,4 +1,4 @@
-import { CheckIcon, MinusIcon } from "@chakra-ui/icons";
+import { CheckIcon } from "@chakra-ui/icons";
 import { BsDot } from "react-icons/bs";
 import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, List, ListIcon, ListItem, Show, Stack, Text } from "@chakra-ui/react"
 import { FitnessCarousel2 } from "../FitnessCarousel2";
@@ -7,7 +7,6 @@ import { Plans } from "../Plans";
 import { TbDiscount } from "react-icons/tb";
 import { FAQs } from "../FAQs";
 import { SliderComponent } from "../SliderComponent";
-import { useEffect, useRef, useState } from "react";
 import { TopCards } from "../TopCards";
 
 const midSectionContent = [

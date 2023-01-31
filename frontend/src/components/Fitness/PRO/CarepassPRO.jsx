@@ -1,13 +1,12 @@
-import { CheckIcon, MinusIcon } from "@chakra-ui/icons";
+import { CheckIcon } from "@chakra-ui/icons";
 import { BsDot } from "react-icons/bs";
-import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, List, ListIcon, ListItem, Show, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, List,  ListItem, Show, Stack, Text } from "@chakra-ui/react"
 import { FitnessCarousel2 } from "../FitnessCarousel2";
 import { FitnessCarousalTop } from "../FitnessCarouselTop";
 import { Plans } from "../Plans";
 import { TbDiscount } from "react-icons/tb";
 import { FAQs } from "../FAQs";
 import { SliderComponent } from "../SliderComponent";
-import { useEffect, useRef, useState } from "react";
 import { TopCards } from "../TopCards";
 
 const midSectionContent = [
@@ -99,7 +98,7 @@ export const CarepassPRO = () => {
                         <Text fontWeight="bold" color="whiteAlpha.700" fontSize="md">Starting at Rs. 1666/month</Text>
                         <Flex gap="10px">
                             <Button bgColor="gray">TRY FOR FREE</Button>
-                            <Button color="whiteAlpha.700" color="red.500">BUY NOW</Button>
+                            <Button  color="red.500">BUY NOW</Button>
                         </Flex>
 
                         <Flex alignItems="center" gap="5px" fontSize="0.9rem">

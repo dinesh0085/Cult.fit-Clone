@@ -8,7 +8,6 @@ import {
   FormControl,
   FormLabel,
   HStack,
-  Icon,
   Input,
   InputGroup,
   InputRightElement,
@@ -20,21 +19,23 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import register from "../../../redux/User/Register/register.action";
 
+const iniState = {
+  name: "",
+  lname: "",
+  email: "",
+  password: "",
+  password_confirmation: "",
+  tc: true,
+};
+
 const SignupPage = () => {
   const [showPassword, setShowPassword] = React.useState(false);
   const [showPassword2, setShowPassword2] = React.useState(false);
   const dispatch = useDispatch();
-  const { isLoading, isError, errorMessage, successMessage } = useSelector(
+  const { isLoading, errorMessage, successMessage } = useSelector(
     (store) => store.register,
   );
-  const [user, setUser] = React.useState({
-    name: "",
-    lname: "",
-    email: "",
-    password: "",
-    password_confirmation: "",
-    tc: true,
-  });
+  const [user, setUser] = React.useState(iniState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,6 +44,7 @@ const SignupPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(register(user));
+    setUser(iniState);
   };
 
   // console.log(user);
@@ -84,7 +86,7 @@ const SignupPage = () => {
                         onChange={handleChange}
                         type="text"
                         name="name"
-                        value={user.firstName}
+                        value={user.name}
                       />
                     </FormControl>
                   </Box>
@@ -96,7 +98,7 @@ const SignupPage = () => {
                         onChange={handleChange}
                         type="text"
                         name="lname"
-                        value={user.lName}
+                        value={user.lname}
                       />
                     </FormControl>
                   </Box>
