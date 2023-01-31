@@ -48,9 +48,9 @@ export const Allroutes = ({ setc }) => {
         <Route
           path={"/checkout"}
           element={
-            // <ProtectedRoute>
+            <ProtectedRoute>
               <CheckoutPage />
-            // </ProtectedRoute>
+            </ProtectedRoute>
           }
         />
       </Routes>
