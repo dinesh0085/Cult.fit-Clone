@@ -40,47 +40,9 @@ const midSectionContent = [
     }
 ]
 
-const images1 = [
-    {url:"https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/black1.png"},
-    {url:"https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/black2.png"},
-];
-
-const images2 = [
-    {url:"https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/gold1.png"},
-    {url:"https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/gold2.png"},
-];
 
 export const CarepassElite = () => {
-    const [index, setIndex] = useState(0);
-
-    const inputIndex = useRef(null);
-
-    const handleClick= (i) =>{
-        clearInterval(inputIndex.current);
-        inputIndex.current = null;
-        setIndex(i);
-        handleInterval();
-    }
-
-    const handleInterval = () => {
-        if(inputIndex.current == null){
-            inputIndex.current = setInterval(()=>{
-                setIndex(prev => {
-                    if(prev === images1.length-1)
-                        return 0;
-                    else    
-                        return prev+1;
-                });
-            }, 3000);
-        }
-    }
-    useEffect(()=>{
-        handleInterval();
-    }, [index]);
-
-
-
-
+  
     return (
         <Box bgColor="#12151A" color="white">
 
@@ -136,40 +98,11 @@ export const CarepassElite = () => {
 
                 </Stack>
                 <Box w={{md:"52%"}}>
-                    <Image borderRadius="20px" src={images1[index].url} />
-                    <Flex gap="10px" justifyContent="center">
-                    {
-                        Array(2).fill(0).map((item, i) => (
-                            <MinusIcon
-                            fontSize="3xl"
-                            color={(index===i)?"red.400" : "white"}
-                            onClick={() => handleClick(i)} key={i} />
-                        ))
-                    }
-                    </Flex>
-                    
+                    <Image borderRadius="20px" src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_968,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/0a647950-80d9-4236-a465-95b9e6ebc697.png" />
+               
                 </Box>
             </Flex>
            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             <Show below="md">
                 <TopCards />
@@ -294,133 +227,9 @@ export const CarepassElite = () => {
 
             
 
-            <Flex 
-            mt="100px" pb="100px" 
-            ml="10%" w="80%" 
-            justifyContent="space-between"
-            direction={{base:"column", md:"row"}}
-            gap="20px"
-            >
-                <Box w={{md:"52%"}}>
-                    <Image borderRadius="20px" src={images2[index].url} />
-                    <Flex gap="10px" justifyContent="center">
-                    {
-                        Array(2).fill(0).map((item, i) => (
-                            <MinusIcon 
-                            fontSize="3xl"
-                            color={(index===i)?"red.400" : "white"} 
-                            onClick={() => handleClick(i)} key={i} />
-                        ))
-                    }
-                    </Flex>
-                </Box>
-                <Stack spacing="20px" w={{md:"45%"}} textAlign="left">
-                    <Heading fontSize="4xl">
-                        carepass <Text as="span" color="orange.300">PRO</Text>
-                    </Heading>
-                    <Heading fontSize="5xl">
-                    Unlimited access to PRO gyms in your city
-                    </Heading>
-                    <Heading fontSize="2xl">Unlimited access to</Heading>
+          
 
-                    <List fontSize="md" color="whiteAlpha.800" fontWeight="bold">
-                        <ListItem>
-                            <Flex gap="2" alignItems="center">
-                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
-                                <Text>All PRO gyms</Text>
-                            </Flex>                            
-                        </ListItem>
-
-                        <ListItem>
-                            <Flex gap="2" alignItems="center">
-                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
-                                <Text> At-home live workouts</Text>
-                            </Flex>                           
-                        </ListItem>
-
-                        <ListItem>
-                            <Flex gap="2" alignItems="center">
-                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
-                                <Text>2 sessions/month at ELITE gyms & group classes</Text>
-                            </Flex>
-                            
-                        </ListItem>
-                    </List>
-
-                    <Stack >
-                        <Text fontWeight="bold" color="whiteAlpha.700" fontSize="md">Starting at Rs. 1666/month</Text>
-                        <Flex gap="10px">
-                            <Button bgColor="gray">TRY FOR FREE</Button>
-                            <Button color="red.500">BUY NOW</Button>
-                        </Flex>
-
-                        <Flex alignItems="center" gap="5px" fontSize="0.9rem">
-                            <Icon as={TbDiscount} color="orange.400" />
-                            SALE ON NOW
-                        </Flex>
-                    </Stack>
-
-                </Stack>
-
-                
-            </Flex>
-
-            <Stack 
-            w="70%" 
-             
-            textAlign="left"
-            p="30px"
-            spacing="5"
-            borderRadius="20px"
-            bgImage="url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600)"
-            bgRepeat='no-repeat'
-            // bgSize="100% 100%"
-            bgSize="cover"
-            
-            >
-                <Text fontSize="5xl">carepass <Text color="hotpink" as="span">HOME</Text></Text>
-                <Heading fontSize="5xl">Bring the gym home</Heading>
-
-                <Stack>
-                    <Heading fontSize="2xl">Unlimited access to</Heading>
-
-                    <List spacing={2} fontSize="lg" fontWeight="bold" color="whiteAlpha.700">
-                        <ListItem>
-                            <Flex gap="2" alignItems="center">
-                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
-                                <Text>At-home workouts</Text>
-                            </Flex>
-                        </ListItem>
-                        <ListItem>
-                            <Flex gap="2" alignItems="center">
-                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
-                                <Text>Celebrity workouts</Text>
-                            </Flex>
-                        </ListItem>
-                        <ListItem>
-                            <Flex gap="2" alignItems="center">
-                                <CheckIcon color="red.400" border="1px" padding="2px" borderRadius="50%" />
-                                <Text>Goal-based workouts & meditation sessions</Text>
-                            </Flex>
-                            
-                        </ListItem>
-                    </List>
-                </Stack>
-                
-
-                <Stack>
-                    <Text color="whiteAlpha.700" fontSize="xl">Starting at Rs.117/month</Text>
-                    <Flex direction={{base:"column", lg:"row"}} gap="5">
-                        <Button fontWeight="bold" bgColor="gray">TRY FOR FREE</Button>
-                        <Button fontWeight="bold" color="red.400">BUY NOW</Button>
-                    </Flex>
-                </Stack>
-                
-                <Flex gap="5px" alignItems="center">
-                    <Icon color="orange.500" as={TbDiscount} /> 
-                    <Text fontSize="sm">SALE ON NOW</Text>
-                </Flex>
-            </Stack> 
+          
 
             {/* <Box
             mt="70px" 
