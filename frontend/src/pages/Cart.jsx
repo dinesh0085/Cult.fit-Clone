@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCarts, addCart, removeCart } from "../redux/Cart/cartAction";
+import { getCarts, removeCart } from "../redux/Cart/cartAction";
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
   Box,
   Button,
   Flex,
@@ -22,6 +17,7 @@ import styles from "./Care.module.css";
 const tok =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzliM2ViMzVkY2EyODRkNGVkZmNjZWMiLCJpYXQiOjE2NzEzMzc4NDEsImV4cCI6MTY3MTc2OTg0MX0.gAyGngbn3cF5P1hv5kKD7O0aLjDdEuAmTtV04Q6Fu9g";
 const token = localStorage.getItem("token") || tok;
+
 function Cart({ setc }) {
   setc("#15171C");
   const dispatch = useDispatch();
@@ -31,8 +27,22 @@ function Cart({ setc }) {
 
   useEffect(() => {
     dispatch(getCarts(token));
-    console.log(cartItems);
+    // console.log(cartItems);
   }, []);
+
+  if(cartItems.length <= 0){
+    return (
+      <Stack
+      w="60%"
+      m="auto"
+      align="Center"
+      p="80px"
+      >
+          <Image src="https://www.pngmart.com/files/7/Cart-PNG-Transparent.png" alt="Cart Image" />
+          <Heading color="blackAlpha.600">Cart is Empty!</Heading>
+      </Stack>
+    )
+  }
 
   return (
     // --------Staring Main Div----------
@@ -59,19 +69,25 @@ function Cart({ setc }) {
             <Heading fontSize="xl">Total Price:</Heading>
             <Heading fontSize="xl">₹ {price}</Heading>
           </Flex>
+
+          <Link
+          to="/checkout"
+          >
+          <Button colorScheme="orange">Checkout</Button>
+            
+          </Link>
+          
         </Flex>
 
         <SimpleGrid
-          marginTop={"3%"}
+          my="60px"
           columns={{ sm: 1, md: 2, lg: 4 }}
           spacing={4}
         >
           {cartItems &&
             cartItems.map((el, i) => {
               if (i >= 0) {
-                if (i == 10) {
-                  return;
-                }
+                
                 // ----------------single product card-------------------------
                 return (
                   <Box className={styles.careCard} key={el._id}>

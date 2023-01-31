@@ -1,16 +1,12 @@
 import React from "react";
 import style from "./Navbar.module.css";
 import { Link, NavLink } from "react-router-dom";
-import { useEffect } from "react";
-import axios from "axios";
-import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Nimg } from "./nimg";
 import { Location } from "./Location";
 import Login from "../pages/User/Login/Login";
-import { FaUserCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { Icon } from "@chakra-ui/icon";
+import { ProfileModal } from "../pages/User/Profile/ProfileModal";
 
 export default function Navbar({ c }) {
   const { isAuth } = useSelector((store) => store.login);
@@ -55,17 +51,18 @@ export default function Navbar({ c }) {
           </div>
           <div>
             {isAuth ? (
-              <Link to={"/profile/account"}>
-                <Icon w={5} h={5} as={FaUserCircle} />
-              </Link>
+              <ProfileModal />
+              
             ) : (
               <Login />
             )}
           </div>
           <div>
+         
             <Link to="/cart">
               <ShoppingCartIcon />
             </Link>
+            
           </div>
           </div>
         

@@ -1,10 +1,8 @@
-import { CheckIcon } from "@chakra-ui/icons";
 import { BsDot } from "react-icons/bs";
-import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, List,  ListItem, Show, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Center, Flex, Heading, HStack, Icon, Image, Show, Stack, Text } from "@chakra-ui/react"
 import { FitnessCarousel2 } from "../FitnessCarousel2";
 import { FitnessCarousalTop } from "../FitnessCarouselTop";
 import { Plans } from "../Plans";
-import { TbDiscount } from "react-icons/tb";
 import { FAQs } from "../FAQs";
 import { SliderComponent } from "../SliderComponent";
 import { useEffect, useRef, useState } from "react";
@@ -78,15 +76,17 @@ export const CarepassTransform = () => {
 
         {/* --------- Top view ------------  */}
 
-        <Flex 
-            pb="100px" 
-            ml="10%" w="80%" 
-            justifyContent="space-between"
-            direction={{base:"column", md:"row"}}
-            gap="20px"
+        <Box 
+           w="80%" 
+         
+           
             >
+                
+                <Box>
+                    <Image src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_3555,h_1647,c_fit/dpr_2//image/vm/255a1781-9e4c-4406-994b-66a53bc4802d.png" />
+                </Box>
                
-                <Stack 
+                {/* <Stack 
                 spacing="20px" 
                 pt="40px"
                 w={{md:"45%"}} 
@@ -135,9 +135,9 @@ export const CarepassTransform = () => {
                         </Flex>
                     </Stack>
 
-                </Stack>
+                </Stack> */}
 
-            </Flex>
+            </Box>
 
 
 

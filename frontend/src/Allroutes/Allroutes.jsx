@@ -9,8 +9,9 @@ import Admin from "../pages/Admin";
 import Dcotors from "../pages/Dcotors";
 import MindSinglePage from "../components/mind/MindSinglePage";
 import Cart from "../pages/Cart";
-import Profile from "../pages/User/Profile/Profile";
 import ProtectedRoute from "../PrivateRoute/ProtectedRoute";
+import { ProfileModal } from "../pages/User/Profile/ProfileModal";
+import { CheckoutPage } from "../pages/CheckoutPage";
 
 export const Allroutes = ({ setc }) => {
   return (
@@ -20,7 +21,14 @@ export const Allroutes = ({ setc }) => {
         <Route path="/fitness" element={<Fitness setc={setc} />} />
         <Route path="/care" element={<Care setc={setc} />} />
         <Route path="/mind" element={<Mind setc={setc} />} />
-        <Route path="/cart" element={<Cart setc={setc} />} />
+        <Route 
+        path="/cart" 
+        element={
+          <ProtectedRoute>
+               <Cart setc={setc} />
+          </ProtectedRoute>
+       
+        } />
         <Route path="/doctor" element={<Dcotors setc={setc} />} />
         <Route path="/admin" element={<Admin setc={setc} />} />
         <Route path="/details/:id" element={<TestSinglePage setc={setc} />} />
@@ -32,8 +40,17 @@ export const Allroutes = ({ setc }) => {
           path={"/profile/*"}
           element={
             <ProtectedRoute>
-              <Profile />
+              <ProfileModal />
             </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path={"/checkout"}
+          element={
+            // <ProtectedRoute>
+              <CheckoutPage />
+            // </ProtectedRoute>
           }
         />
       </Routes>
